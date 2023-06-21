@@ -9,7 +9,6 @@ public class E_DeathState : IEnemyState
         Debug.Log("enter death state");
         _ctx.States = Enemy.State.DEATH_STATE;
         _ctx.gameObject.SetActive(false);
-
     }
 
     public void ExitState(Enemy _ctx)
@@ -20,6 +19,10 @@ public class E_DeathState : IEnemyState
 
     public void UpdateState(Enemy _ctx)
     {
+        if(!_ctx.gameObject.activeSelf)
+        {
+            Debug.Log("spawn after 2 minute");
+        }
         Debug.Log("update death state");
     }
 }
