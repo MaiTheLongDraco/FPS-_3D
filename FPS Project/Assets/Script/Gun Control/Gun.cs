@@ -28,6 +28,7 @@ public class Gun :MonoBehaviour
                 Debug.Log(target.IsUnityNull());
             if(target != null)
             {
+                target.SetState(target._isAttack);
             target.TakeDamage(damage);
             }
         }

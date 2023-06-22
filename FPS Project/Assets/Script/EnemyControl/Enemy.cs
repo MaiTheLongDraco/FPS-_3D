@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour
         RUN_STATE,
         CHASE_STATE,
         ATTACK_STATE,
-        DEATH_STATE
+        DEATH_STATE,
+        ISATTACKED_STATE
     }
     #region CLOSE FOR MODIFICATION
     [Header(" Enenmy handle var")]
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
    public  E_DeathState _deadState=new E_DeathState();
    public  E_ChaseState _chaseState=new E_ChaseState();
    public  E_IdleState _idleState=new E_IdleState();
+   public  E_IsAttackedState _isAttack=new E_IsAttackedState();
     public bool IsPlayerInRange;
     #region OPEN FOR EXTENSION
     public NavMeshAgent NavMesh => e_NavMesh;

@@ -64,7 +64,7 @@ public class E_RunState : IEnemyState
     public void UpdateState(Enemy _ctx)
     {
 
-        Debug.LogError(_isRoaming + "_isRoaming");
+        //Debug.LogError(_isRoaming + "_isRoaming");
         DoRoaming(_ctx);
         CheckPlayerInAtkRange(_ctx);
        HandlePlayerInRange(_ctx);
