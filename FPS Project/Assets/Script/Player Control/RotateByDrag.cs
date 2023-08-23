@@ -24,6 +24,12 @@ public class RotateByDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         cameraTran.transform.Rotate(-rotationX, 0, 0);
         GunTran.transform.Rotate(-rotationX, 0, 0);
     }
+    public void SetGunTranform(Gun currenGun)
+    {
+        print($" prev gun tranform -- {GunTran}");
+        GunTran = currenGun.transform;
+        print($" after gun tranform  --{GunTran}");
+    }
 
     public void OnEndDrag(PointerEventData eventData)
     {

@@ -1,11 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GunSwitcher : MonoBehaviour
 {
     [SerializeField] private List<GameObject> guns;
     private int gunIndex;
+    private Transform currenGun;
+    public UnityEvent<Gun> OnchangeGun;
     private void Start()
     {
         gunIndex = 0;
@@ -15,12 +17,14 @@ public class GunSwitcher : MonoBehaviour
     public void SwitchGun()
     {
         HandleGunIndex();
-        guns[gunIndex].SetActive(true);
+        // guns[gunIndex].SetActive(true);
         for (int i = 0; i < guns.Count; i++)
         {
             if (i == gunIndex)
             {
                 guns[i].SetActive(true);
+                currenGun = guns[i].transform;
+                OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
             }
             else
             {
