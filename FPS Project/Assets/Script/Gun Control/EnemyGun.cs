@@ -25,13 +25,15 @@ public class EnemyGun : MonoBehaviour
             if(player)
             {
                 player.TakeDamage(_damage);
-                StartCoroutine(player.SplashScreenHandle());
+                //StartCoroutine(player.SplashScreenHandle());
             }
         }
     }
     public void DelayShooting()
     {
+        var player =_player.gameObject.GetComponent<PlayerHeath>();
         E_shootInterval -= Time.deltaTime;
+     //   StartCoroutine(player.SplashScreenHandle());
 
         var EnemyParent = GetComponentInParent<Enemy>();
         bool isAtkState = EnemyParent.States == Enemy.State.ATTACK_STATE;
@@ -69,6 +71,7 @@ public class EnemyGun : MonoBehaviour
         var direction = _playerTranform.position - transform.position;
       //  trail.transform.position = Vector3.MoveTowards(trail.transform.position, _playerTranform.position,0.1f);
       _rb.AddForce(direction* _bulletSpeed);
+        Destroy(trail, max_shootInterval);
     }
     private TrailRenderer CreateBulletTrail()
     {

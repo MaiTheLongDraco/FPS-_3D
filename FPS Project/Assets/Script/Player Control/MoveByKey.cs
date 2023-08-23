@@ -6,6 +6,7 @@ public class MoveByKey : MonoBehaviour
 {
     [SerializeField] private CharacterController _charControl;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private FixedJoystick fixedJoystick;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +20,12 @@ public class MoveByKey : MonoBehaviour
     {
         Move();
     }
-    private void OnValidate() => _charControl=GetComponent<CharacterController>();
+    private void OnValidate() => _charControl = GetComponent<CharacterController>();
     private void Move()
     {
-        var hrInput = Input.GetAxis("Horizontal");
-        var VTInput = Input.GetAxis("Vertical");
-        Vector3 direction= transform.right*hrInput+transform.forward*VTInput;
+        var hrInput = fixedJoystick.Horizontal;
+        var VTInput = fixedJoystick.Vertical;
+        Vector3 direction = transform.right * hrInput + transform.forward * VTInput;
         _charControl.SimpleMove(direction * moveSpeed);
-        //Debug.Log(hrInput+ " " + VTInput);
-        //Debug.Log($"tranform right +{transform.right}");
-        //Debug.Log($"tranform foward +{transform.forward}");
     }
 }

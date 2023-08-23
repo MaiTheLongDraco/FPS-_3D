@@ -54,10 +54,21 @@ public class PlayerHeath : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
         var t = Mathf.Clamp01(elapsedTime / _timeToDisActive);
+       // t=ResetTValue(t);
+        Debug.Log("t value" + t);
         SplashScreenSetActive(true);
        _splashScreen.GetComponent<RawImage>().color=Color.Lerp(originalColor, targetColor, t); 
         yield return new WaitForSeconds(_timeToDisActive);
         SplashScreenSetActive(false);
 
     }
+    private float ResetTValue(float t)
+    {
+        if(t==1)
+        {
+            t = 0;
+        }
+        return t;
+    }
+  
 }

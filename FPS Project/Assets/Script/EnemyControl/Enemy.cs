@@ -20,19 +20,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float heath;
     [SerializeField] private State state;
     [SerializeField] private float _dectectRange;
-    [SerializeField] private NavMeshAgent  e_NavMesh;
-    [SerializeField] private Transform  _playerTranform;
+    [SerializeField] private NavMeshAgent e_NavMesh;
+    [SerializeField] private Transform _playerTranform;
     private Vector3 finalStandPos;
     [SerializeField] private GameObject _explosionPrefab;
     private IEnemyState _state;
     #endregion
     [Header(" Concrete State")]
-   public  E_AttackState _attackState=new E_AttackState();
-   public  E_RunState _runsate=new E_RunState();
-   public  E_DeathState _deadState=new E_DeathState();
-   public  E_ChaseState _chaseState=new E_ChaseState();
-   public  E_IdleState _idleState=new E_IdleState();
-   public  E_IsAttackedState _isAttack=new E_IsAttackedState();
+    public E_AttackState _attackState = new E_AttackState();
+    public E_RunState _runsate = new E_RunState();
+    public E_DeathState _deadState = new E_DeathState();
+    public E_ChaseState _chaseState = new E_ChaseState();
+    public E_IdleState _idleState = new E_IdleState();
+    public E_IsAttackedState _isAttack = new E_IsAttackedState();
     public bool IsPlayerInRange;
     #region OPEN FOR EXTENSION
     public NavMeshAgent NavMesh => e_NavMesh;
@@ -50,9 +50,8 @@ public class Enemy : MonoBehaviour
         e_NavMesh.speed = 10f;
         IsPlayerInRange = false;
         SetState(_runsate);
-        //StartCoroutine("testStateMachine");
     }
-    public Enemy ()
+    public Enemy()
     {
         _state = new E_RunState();
     }
@@ -72,16 +71,16 @@ public class Enemy : MonoBehaviour
     }
     private void HandlePlayerOutRange()
     {
-        if(Vector3.Distance(transform.position,_playerTranform.position)>_dectectRange)
+        if (Vector3.Distance(transform.position, _playerTranform.position) > _dectectRange)
         {
             SetIsPlayerOnRange(false);
         }
-    }    
-      
+    }
+
     public void TakeDamage(float damage)
     {
         heath -= damage;
-        if(heath<=0)
+        if (heath <= 0)
         {
             Debug.Log("explosion");
             SetState(_deadState);
@@ -90,35 +89,17 @@ public class Enemy : MonoBehaviour
             Destroy(explode, 2f);
         }
     }
-    public IEnumerator testStateMachine()
-    {
-        SetState(_idleState);
-        _state.UpdateState(this);
-        _state.ExitState(this);
-        yield return new WaitForSeconds(2f);
-        SetState(_runsate);
-        _state.UpdateState(this);
-        _state.ExitState(this);
-        yield return new WaitForSeconds(2f);
-        SetState(_chaseState);
-        _state.UpdateState(this);
-        _state.ExitState(this);
-        yield return new WaitForSeconds(2f);
-        SetState(_attackState);
-        _state.UpdateState(this);
-        _state.ExitState(this);
-        yield return new WaitForSeconds(2f);
-        SetState(_deadState);
-        _state.UpdateState(this);
-        _state.ExitState(this);
-        yield return new WaitForSeconds(2f);
-    }   
     public void SetIsPlayerOnRange(bool value)
     {
-        IsPlayerInRange= value;
+        IsPlayerInRange = value;
     }
-   
+
     private void OnDrawGizmos()
+    {
+        DrawSphereGizMos();
+    }
+
+    private void DrawSphereGizMos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, _dectectRange);
