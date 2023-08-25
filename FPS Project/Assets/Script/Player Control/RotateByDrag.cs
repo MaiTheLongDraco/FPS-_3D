@@ -20,9 +20,12 @@ public class RotateByDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         float rotationX = eventData.delta.y * rotationSpeed * Time.deltaTime;
         float rotationY = -eventData.delta.x * rotationSpeed * Time.deltaTime;
         playerTran.transform.Rotate(0, -rotationY, 0);
-        rotationX = Mathf.Clamp(rotationX, -60, 60);
-        cameraTran.transform.Rotate(-rotationX, 0, 0);
+        rotationX = Mathf.Clamp(rotationX, -40, 40);
+        Debug.Log($" rotationX {rotationX}");
         GunTran.transform.Rotate(-rotationX, 0, 0);
+        if (cameraTran.rotation.x > 40 || cameraTran.rotation.x < -40) return;
+        cameraTran.transform.Rotate(-rotationX, 0, 0);
+        // cameraTran.transform.rotation = Quaternion.Euler(-rotationX, 0, 0);
     }
     public void SetGunTranform(Gun currenGun)
     {
