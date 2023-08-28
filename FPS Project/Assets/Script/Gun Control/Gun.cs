@@ -48,9 +48,9 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
-        HandleShootInteval();
+        // HandleShootInteval();
     }
-    private void HandleShootInteval()
+    public void HandleShootInteval()
     {
         if (IsOutOfAmmo)
             return;
@@ -61,5 +61,12 @@ public class Gun : MonoBehaviour
             fireRate = timeInterval;
             Shoot();
         }
+    }
+    public void Test()
+    {
+        // if (IsOutOfAmmo)
+        //     return;
+        // Shoot();
+
     }
 }

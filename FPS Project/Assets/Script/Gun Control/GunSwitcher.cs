@@ -7,13 +7,33 @@ public class GunSwitcher : MonoBehaviour
     [SerializeField] private List<GameObject> guns;
     private int gunIndex;
     private Transform currenGun;
+    [SerializeField] private Gun CurrentGun;
+    [SerializeField] private bool isButtonHeld;
     public UnityEvent<Gun> OnchangeGun;
     private void Start()
     {
         gunIndex = 0;
         SwitchGun();
     }
-
+    public void CurrentGunShoot()
+    {
+        if (isButtonHeld)
+        {
+            CurrentGun.HandleShootInteval();
+        }
+    }
+    private void Update()
+    {
+        CurrentGunShoot();
+    }
+    public void ButtonPress()
+    {
+        isButtonHeld = true;
+    }
+    public void ButtonRelease()
+    {
+        isButtonHeld = false;
+    }
     public void SwitchGun()
     {
         HandleGunIndex();
@@ -24,6 +44,7 @@ public class GunSwitcher : MonoBehaviour
             {
                 guns[i].SetActive(true);
                 currenGun = guns[i].transform;
+                CurrentGun = guns[gunIndex].GetComponent<Gun>();
                 OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
             }
             else

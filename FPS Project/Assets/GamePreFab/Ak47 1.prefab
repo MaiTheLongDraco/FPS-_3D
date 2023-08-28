@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 5601563111331405850}
   - component: {fileID: 5601563111331405851}
   - component: {fileID: 5601563111331405849}
+  - component: {fileID: 1244301187}
   m_Layer: 0
   m_Name: Ak47 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5601563111331406053
 Transform:
   m_ObjectHideFlags: 0
@@ -105,6 +106,29 @@ MonoBehaviour:
   shootPoint: {fileID: 6828916165289097857}
   impactPrefab: {fileID: 6630822595704368358}
   _crossHair: {fileID: 0}
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []
+  IsOutOfAmmo: 0
+--- !u!114 &1244301187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601563111331406052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda63552234e6ac4aa32ba2a5164ec5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoPerShoot: {fileID: 0}
+  ammoPerGun: {fileID: 0}
+  NumAmmoPerShoot: 15
+  ResetAmmo: 15
+  NumAmmoPerGun: 199
+  timeToReload: 0.3
+  gun: {fileID: 0}
 --- !u!1001 &5601563111290016228
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,10 +11,18 @@ public class AmmoSystem : MonoBehaviour
     [SerializeField] private int NumAmmoPerShoot;
     [SerializeField] private int ResetAmmo;
     [SerializeField] private int NumAmmoPerGun;
-
+    [SerializeField] private float timeToReload;
     [SerializeField] private Gun gun;
     // Start is called before the first frame update
     void Start()
+    {
+    }
+    private void OnEnable()
+    {
+        SetUpAmmo();
+    }
+
+    private void SetUpAmmo()
     {
         gun = GetComponent<Gun>();
         gun.OnShoot.AddListener(DecreasePerShoot);
@@ -31,7 +40,8 @@ public class AmmoSystem : MonoBehaviour
         NumAmmoPerShoot--;
         if (NumAmmoPerShoot <= 0)
         {
-            DecreasePerGun();
+            gun.IsOutOfAmmo = true;
+            Invoke("WaitReloadAmmo", timeToReload);
         }
         SetAmmoPerShootTxt(NumAmmoPerShoot.ToString());
         StopShooting();
@@ -39,9 +49,21 @@ public class AmmoSystem : MonoBehaviour
     private void DecreasePerGun()
     {
         if (NumAmmoPerGun <= 0) return;
-        NumAmmoPerGun -= ResetAmmo;
         NumAmmoPerShoot = ResetAmmo;
+        NumAmmoPerGun -= ResetAmmo;
         SetAmmoPerGunTxt(NumAmmoPerGun.ToString());
+    }
+    private void WaitReloadAmmo()
+    {
+        if (NumAmmoPerGun + NumAmmoPerShoot <= 0)
+            return;
+        print($"NumAmmoPerGun + NumAmmoPerShoot {NumAmmoPerGun + NumAmmoPerShoot}");
+        gun.IsOutOfAmmo = false;
+        DecreasePerGun();
+    }
+    private void SetOutAmmoFalse()
+    {
+        gun.IsOutOfAmmo = false;
     }
     private void StopShooting()
     {
