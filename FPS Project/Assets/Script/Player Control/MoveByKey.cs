@@ -6,6 +6,9 @@ public class MoveByKey : MonoBehaviour
 {
     [SerializeField] private CharacterController _charControl;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private bool isSpeedUp;
+    [SerializeField] private float desireSpeed;
+
     [SerializeField] private FixedJoystick fixedJoystick;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +18,14 @@ public class MoveByKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isSpeedUp)
+        {
+            moveSpeed = desireSpeed;
+        }
+        else
+        {
+            moveSpeed = 20;
+        }
     }
     private void FixedUpdate()
     {
@@ -27,5 +38,13 @@ public class MoveByKey : MonoBehaviour
         var VTInput = fixedJoystick.Vertical;
         Vector3 direction = transform.right * hrInput + transform.forward * VTInput;
         _charControl.SimpleMove(direction * moveSpeed);
+    }
+    public void SpeedUp()
+    {
+        isSpeedUp = true;
+    }
+    public void BackToNormalSpeed()
+    {
+        isSpeedUp = false;
     }
 }
