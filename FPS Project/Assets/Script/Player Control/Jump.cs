@@ -15,34 +15,34 @@ public class Jump : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Jumping();
+        // Jumping();
     }
-    private void Jumping()
+    public void Jumping()
     {
         ResetVelocityY();
         _isGround = Physics.CheckSphere(_groundCheck.position, _radius, _groundLayer);
-        if(_isGround&& CheckInput())
+        if (_isGround)
         {
-        Debug.Log(_isGround + "IS grounded ??");
+            Debug.Log(_isGround + "IS grounded ??");
             _velocity.y = Mathf.Sqrt(_jumpForce * -2f * _gravity);
         }
         _velocity.y += _gravity * Time.deltaTime;
         _charControl.Move(_velocity * Time.deltaTime);
-    }  
-   
+    }
+
     private void ResetVelocityY()
     {
-        if(_isGround&&_velocity.y<0)
+        if (_isGround && _velocity.y < 0)
         {
             _velocity.y = -2f;
         }
-       
+
     }
     private bool CheckInput()
     {
