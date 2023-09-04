@@ -61,5 +61,9 @@ public class GunSwitcher : MonoBehaviour
             gunIndex = 0;
         }
     }
+    public void ReloadCurrentGun()
+    {
+        CurrentGun.ReloadAmmo();
+    }
 
 }

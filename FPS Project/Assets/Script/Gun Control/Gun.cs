@@ -62,11 +62,8 @@ public class Gun : MonoBehaviour
             Shoot();
         }
     }
-    public void Test()
+    public void ReloadAmmo()
     {
-        // if (IsOutOfAmmo)
-        //     return;
-        // Shoot();
-
+        this.GetComponent<AmmoSystem>().ReLoadAmmoBtn();
     }
 }

@@ -63,10 +63,6 @@ public class AmmoSystem : MonoBehaviour
         gun.IsOutOfAmmo = false;
         DecreasePerGun();
     }
-    private void SetOutAmmoFalse()
-    {
-        gun.IsOutOfAmmo = false;
-    }
     private void StopShooting()
     {
         if (NumAmmoPerGun + NumAmmoPerShoot <= 0)
@@ -81,6 +77,14 @@ public class AmmoSystem : MonoBehaviour
     private void SetAmmoPerGunTxt(string desireText)
     {
         ammoPerGun.text = desireText;
+    }
+    public void ReLoadAmmoBtn()
+    {
+        var reloadNumber = ResetAmmo - NumAmmoPerShoot;
+        NumAmmoPerGun -= reloadNumber;
+        NumAmmoPerShoot += reloadNumber;
+        SetAmmoPerGunTxt(NumAmmoPerGun.ToString());
+        SetAmmoPerShootTxt(NumAmmoPerShoot.ToString());
     }
 
 }
