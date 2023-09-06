@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour
     public float DetectRange { get { return _dectectRange; } }
     public Transform PlayerTranform { get { return _playerTranform; } }
     public Vector3 FinalStandPos { get { return finalStandPos; } set { finalStandPos = value; } }
+    public UnityEvent OnDeath;
     #endregion
 
     // Start is called before the first frame update
@@ -85,7 +87,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("explosion");
             SetState(_deadState);
             var explode = Instantiate(_explosionPrefab, transform.position, transform.rotation);
-
+            OnDeath?.Invoke();
             Destroy(explode, 2f);
         }
     }
