@@ -10,12 +10,14 @@ public class SetTextForEnemy : MonoBehaviour
     [SerializeField] private int killedEnmeny;
     [SerializeField] private Text totalEnmenyTXT;
     [SerializeField] private Text killedEnmenyTXT;
+    [SerializeField] private GameObject winPanel;
     // Start is called before the first frame update
     void Start()
     {
         totalEnmeny = GetComponentsInChildren<Enemy>().Count();
         SetTotalEnemy(totalEnmeny.ToString());
         SetKilledEnemy(killedEnmeny.ToString());
+        SetActiveWinPanel(false);
     }
 
     // Update is called once per frame
@@ -35,5 +37,13 @@ public class SetTextForEnemy : MonoBehaviour
     {
         killedEnmeny++;
         SetKilledEnemy(killedEnmeny.ToString());
+        if (killedEnmeny >= totalEnmeny)
+        {
+            SetActiveWinPanel(true);
+        }
+    }
+    private void SetActiveWinPanel(bool set)
+    {
+        winPanel.SetActive(set);
     }
 }
