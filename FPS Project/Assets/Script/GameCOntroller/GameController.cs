@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject pauseGamePanel;
+    [SerializeField] private GameObject losePanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,9 @@ public class GameController : MonoBehaviour
     public void SetActivePauseGamePanel(bool set)
     {
         pauseGamePanel.SetActive(set);
+    }
+    public void SetActiveLosePanel(bool isActive)
+    {
+        losePanel.SetActive(isActive);
     }
 }

@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerHeath : MonoBehaviour
@@ -10,11 +11,13 @@ public class PlayerHeath : MonoBehaviour
     public bool IsTakeDamage { get { return isTakeDamage; } private set { isTakeDamage = value; } }
     public GameObject SplashScreen { get { return _splashScreen; } }
     #endregion
-    
+
     #region private var
     [SerializeField] private int _heath;
     private bool isTakeDamage;
     [SerializeField] private GameObject _splashScreen;
+    [SerializeField] private Image heathBar;
+    [SerializeField] private UnityEvent onPlayDie;
     [SerializeField] private float _timeToDisActive;
     private Color originalColor;
     private Color targetColor;
@@ -22,17 +25,29 @@ public class PlayerHeath : MonoBehaviour
     #endregion
     private void Start()
     {
-        originalColor=_splashScreen.GetComponent<RawImage>().color;
-        targetColor=new Color(originalColor.r,originalColor.g, originalColor.b,0);
+        originalColor = _splashScreen.GetComponent<RawImage>().color;
+        targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
     }
     public void TakeDamage(int damage)
     {
         _heath -= damage;
-       
+        SetFillAmountOfHeath();
+        if (_heath <= 0)
+        {
+            onPlayDie?.Invoke();
+        }
+    }
+    private void SetFillAmountOfHeath()
+    {
+        print($"deacre heath {_heath}");
+
+        float fillAmount = (float)_heath / 100;
+        print($"fillamount {fillAmount}");
+        heathBar.fillAmount = fillAmount;
     }
     private void HandleIfDead()
     {
-       
+
         Debug.Log("Player died");
     }
     private void CheckIfDead()
@@ -54,21 +69,21 @@ public class PlayerHeath : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
         var t = Mathf.Clamp01(elapsedTime / _timeToDisActive);
-       // t=ResetTValue(t);
+        // t=ResetTValue(t);
         Debug.Log("t value" + t);
         SplashScreenSetActive(true);
-       _splashScreen.GetComponent<RawImage>().color=Color.Lerp(originalColor, targetColor, t); 
+        _splashScreen.GetComponent<RawImage>().color = Color.Lerp(originalColor, targetColor, t);
         yield return new WaitForSeconds(_timeToDisActive);
         SplashScreenSetActive(false);
 
     }
     private float ResetTValue(float t)
     {
-        if(t==1)
+        if (t == 1)
         {
             t = 0;
         }
         return t;
     }
-  
+
 }

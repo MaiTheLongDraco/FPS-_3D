@@ -1045,6 +1045,8 @@ GameObject:
   - component: {fileID: 5274123109044766020}
   - component: {fileID: 1761546006}
   - component: {fileID: 1244261422823405507}
+  - component: {fileID: 1761546007}
+  - component: {fileID: 1761546008}
   m_Layer: 6
   m_Name: Rifle_00
   m_TagString: Untagged
@@ -1097,6 +1099,10 @@ MonoBehaviour:
   shootPoint: {fileID: 2427467036444888141}
   impactPrefab: {fileID: 4085055291852572664}
   _crossHair: {fileID: 0}
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []
+  IsOutOfAmmo: 0
 --- !u!114 &1244261422823405507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,6 +1115,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda63552234e6ac4aa32ba2a5164ec5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoPerShoot: {fileID: 0}
+  ammoPerGun: {fileID: 0}
+  NumAmmoPerShoot: 20
+  ResetAmmo: 20
+  NumAmmoPerGun: 20
+  timeToReload: 1
+  gun: {fileID: 0}
+--- !u!95 &1761546007
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790321107070263294}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bba9bc02e2fb17c4b92400b0ad4ed150, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1761546008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790321107070263294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a23fd36f9879a46889bd6853fd8531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1761546007}
+  crossHair: {fileID: 0}
 --- !u!1 &6123413876824244954
 GameObject:
   m_ObjectHideFlags: 0
