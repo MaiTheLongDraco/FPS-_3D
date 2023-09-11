@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Jump : MonoBehaviour
@@ -12,6 +13,7 @@ public class Jump : MonoBehaviour
     private bool _isGround;
     [SerializeField] private float _gravity;
     private Vector3 _velocity;
+    private bool isJump;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,15 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Jumping();
+        if (isJump)
+        {
+            Jumping();
+        }
+        else
+        {
+            _velocity.y += _gravity;
+            _charControl.Move(_velocity * Time.deltaTime);
+        }
     }
     public void Jumping()
     {
@@ -30,16 +40,25 @@ public class Jump : MonoBehaviour
         if (_isGround)
         {
             Debug.Log(_isGround + "IS grounded ??");
-            _velocity.y = Mathf.Sqrt(_jumpForce * -2f * _gravity);
+            Vector3 jumpDir = new Vector3(0, _jumpForce, 0);
+            _charControl.Move(jumpDir * Time.deltaTime);
         }
-        _velocity.y += _gravity * Time.deltaTime;
-        _charControl.Move(_velocity * Time.deltaTime);
+
+    }
+    public void JumpPress()
+    {
+        isJump = true;
+    }
+    public void JumpBtnRelease()
+    {
+        isJump = false;
     }
 
     private void ResetVelocityY()
     {
         if (_isGround && _velocity.y < 0)
         {
+            isJump = false;
             _velocity.y = -2f;
         }
 

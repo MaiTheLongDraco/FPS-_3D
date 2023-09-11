@@ -24,6 +24,7 @@ public class RotateByDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         Debug.Log($" rotationX {rotationX}");
         GunTran.transform.Rotate(-rotationX, 0, 0);
         if (cameraTran.rotation.x > 40 || cameraTran.rotation.x < -40) return;
+        print("out of rotate range");
         cameraTran.transform.Rotate(-rotationX, 0, 0);
         // cameraTran.transform.rotation = Quaternion.Euler(-rotationX, 0, 0);
     }
