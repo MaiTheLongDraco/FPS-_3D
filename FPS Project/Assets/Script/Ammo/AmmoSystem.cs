@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +13,7 @@ public class AmmoSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gun.OnShoot.AddListener(DecreasePerShoot);
     }
     private void OnEnable()
     {
@@ -25,7 +23,6 @@ public class AmmoSystem : MonoBehaviour
     private void SetUpAmmo()
     {
         gun = GetComponent<Gun>();
-        gun.OnShoot.AddListener(DecreasePerShoot);
         SetAmmoPerShootTxt(NumAmmoPerShoot.ToString());
         SetAmmoPerGunTxt(NumAmmoPerGun.ToString());
     }

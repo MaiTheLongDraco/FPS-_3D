@@ -842,7 +842,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _charControl: {fileID: 115760499}
-  _gravity: -0.0054
+  _gravity: -1
 --- !u!54 &115760507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3109,6 +3109,10 @@ PrefabInstance:
       propertyPath: ammoPerShoot
       value: 
       objectReference: {fileID: 543007746}
+    - target: {fileID: 1244261422823405507, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
+      propertyPath: NumAmmoPerGun
+      value: 299
+      objectReference: {fileID: 0}
     - target: {fileID: 4790321107070263294, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
       propertyPath: m_Name
       value: Rifle_00
@@ -11310,6 +11314,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2147353754}
     m_Modifications:
     - target: {fileID: 1244301187, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
+      propertyPath: ResetAmmo
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244301187, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
       propertyPath: ammoPerGun
       value: 
       objectReference: {fileID: 791273305}
@@ -11317,6 +11325,14 @@ PrefabInstance:
       propertyPath: ammoPerShoot
       value: 
       objectReference: {fileID: 543007746}
+    - target: {fileID: 1244301187, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
+      propertyPath: timeToReload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244301187, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
+      propertyPath: NumAmmoPerGun
+      value: 199
+      objectReference: {fileID: 0}
     - target: {fileID: 1244301188, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
       propertyPath: m_Controller
       value: 
@@ -11333,6 +11349,10 @@ PrefabInstance:
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
+    - target: {fileID: 5601563111331405849, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
+      propertyPath: timeInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5601563111331406052, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
       propertyPath: m_Name
       value: Ak47
