@@ -1965,9 +1965,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1761546008}
-          m_TargetAssemblyTypeName: AmingSystem, Assembly-CSharp
-          m_MethodName: SetAim
+        - m_Target: {fileID: 1979569961}
+          m_TargetAssemblyTypeName: GunSwitcher, Assembly-CSharp
+          m_MethodName: SetAimCurrentGun
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1981,9 +1981,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1761546008}
-          m_TargetAssemblyTypeName: AmingSystem, Assembly-CSharp
-          m_MethodName: SetAim
+        - m_Target: {fileID: 1979569961}
+          m_TargetAssemblyTypeName: GunSwitcher, Assembly-CSharp
+          m_MethodName: SetAimCurrentGun
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3112,6 +3112,10 @@ PrefabInstance:
     - target: {fileID: 4790321107070263294, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
       propertyPath: m_Name
       value: Rifle_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790321107070263294, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5274123109044766020, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
       propertyPath: m_RootOrder
@@ -4480,7 +4484,6 @@ MonoBehaviour:
   minPicht: -60
   maxPicht: 50
   rotationSpeed: 2
-  pitch: 0
 --- !u!4 &889775244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
@@ -8791,17 +8794,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5274123109044766020, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
   m_PrefabInstance: {fileID: 573565579}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1761546008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1761546008, guid: cac4009e596e70b4d872ed77341c039b, type: 3}
-  m_PrefabInstance: {fileID: 573565579}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085077293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1a23fd36f9879a46889bd6853fd8531, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1817723660
 GameObject:
   m_ObjectHideFlags: 0
@@ -11325,6 +11317,10 @@ PrefabInstance:
       propertyPath: ammoPerShoot
       value: 
       objectReference: {fileID: 543007746}
+    - target: {fileID: 1244301188, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cca85ea263aeec34f942bed7144132f0, type: 2}
     - target: {fileID: 1244301189, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
       propertyPath: crossHair
       value: 
@@ -11340,6 +11336,10 @@ PrefabInstance:
     - target: {fileID: 5601563111331406052, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
       propertyPath: m_Name
       value: Ak47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601563111331406052, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5601563111331406053, guid: 7fc5252e72bc06e49a6577e46b9b1219, type: 3}
       propertyPath: m_RootOrder

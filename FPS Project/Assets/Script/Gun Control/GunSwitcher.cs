@@ -53,6 +53,11 @@ public class GunSwitcher : MonoBehaviour
             }
         }
     }
+
+    public void SetAimCurrentGun(bool set)
+    {
+        currenGun.GetComponent<AmingSystem>().SetAim(set);
+    }
     private void HandleGunIndex()
     {
         gunIndex++;
