@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08983221, g: 0.0730004, b: 0.14568727, a: 1}
+  m_IndirectSpecularColor: {r: 0.11178579, g: 0.09811701, b: 0.16250244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -842,7 +842,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _charControl: {fileID: 115760499}
-  _gravity: 0
+  _gravity: -0.0054
 --- !u!54 &115760507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4380,7 +4380,8 @@ GameObject:
   - component: {fileID: 863161177}
   - component: {fileID: 863161179}
   - component: {fileID: 863161178}
-  - component: {fileID: 863161180}
+  - component: {fileID: 863161181}
+  - component: {fileID: 863161182}
   m_Layer: 5
   m_Name: DragPanel
   m_TagString: Untagged
@@ -4446,7 +4447,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863161176}
   m_CullTransparentMesh: 1
---- !u!114 &863161180
+--- !u!114 &863161181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863161176}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337541e41bc33694a89939d36a8e17e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anglePerSecond: 80
+  player: {fileID: 115760503}
+  camera: {fileID: 963194228}
+--- !u!114 &863161182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4460,10 +4476,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTran: {fileID: 115760503}
   cameraTran: {fileID: 963194228}
-  GunTran: {fileID: 1761546004}
-  minPicht: 0
-  maxPicht: 0
-  rotationSpeed: 7
+  GunTran: {fileID: 2147353754}
+  minPicht: -60
+  maxPicht: 50
+  rotationSpeed: 2
+  pitch: 0
 --- !u!4 &889775244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
@@ -10142,7 +10159,7 @@ MonoBehaviour:
   OnchangeGun:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 863161180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RotateByDrag, Assembly-CSharp
         m_MethodName: SetGunTranform
         m_Mode: 0

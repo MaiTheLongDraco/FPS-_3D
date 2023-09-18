@@ -50,6 +50,20 @@ public class Gun : MonoBehaviour
     {
         // HandleShootInteval();
     }
+    private void LookAtCenterScreen()
+    {
+        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+
+        // Chuyển vị trí trung tâm màn hình từ màn hình sang thế giới 3D
+        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
+
+        // Xác định hướng để súng nhìn vào vị trí trung tâm màn hình
+        Vector3 lookDirection = worldCenter - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(lookDirection);
+
+        // Áp dụng xoay vào súng
+        transform.rotation = rotation;
+    }
     public void HandleShootInteval()
     {
         if (IsOutOfAmmo)

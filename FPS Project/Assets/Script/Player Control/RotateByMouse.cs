@@ -7,6 +7,8 @@ public class RotateByMouse : MonoBehaviour
     [SerializeField] private float anglePerSecond;
     private float xRotation;
     [SerializeField] private Transform player;
+    [SerializeField] private Transform camera;
+
     // Enemy 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +29,8 @@ public class RotateByMouse : MonoBehaviour
         var mouseX = Input.GetAxis("Mouse X") * anglePerSecond * Time.deltaTime;
         var mouseY = Input.GetAxis("Mouse Y") * anglePerSecond * Time.deltaTime;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90, 90);
+        xRotation = Mathf.Clamp(xRotation, -40, 40);
         player.transform.Rotate(Vector3.up * mouseX);
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        camera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
 }
