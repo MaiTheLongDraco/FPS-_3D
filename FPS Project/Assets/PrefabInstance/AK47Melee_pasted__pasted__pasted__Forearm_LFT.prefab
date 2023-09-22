@@ -1,0 +1,765 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1538173954643643
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4823628206035540}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Forearm_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4823628206035540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538173954643643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4080607890112104}
+  - {fileID: 4359204293522984}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1365915313350416
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4080607890112104}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Palm_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4080607890112104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365915313350416}
+  m_LocalRotation: {x: -0.018460955, y: 0.931676, z: -0.0071878075, w: -0.3627498}
+  m_LocalPosition: {x: 0.11411949, y: -0.00034522737, z: 0.0025709497}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4709441710159780}
+  - {fileID: 4641904091421654}
+  - {fileID: 4312569487342586}
+  - {fileID: 4022816139142885}
+  - {fileID: 4683033212441711}
+  m_Father: {fileID: 4823628206035540}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 180, y: 42.54709, z: 177.72969}
+--- !u!1 &1407532664211312
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4709441710159780}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Index1_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4709441710159780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407532664211312}
+  m_LocalRotation: {x: -0.17125008, y: 0.70765877, z: 0.102498665, w: 0.6777807}
+  m_LocalPosition: {x: -0.022854233, y: 0.0016108275, z: -0.015859641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4298764830618600}
+  m_Father: {fileID: 4080607890112104}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -124.66597, y: -83.92301, z: 102.3118}
+--- !u!1 &1083867408844066
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4298764830618600}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Index2_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4298764830618600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083867408844066}
+  m_LocalRotation: {x: 0.2505543, y: 0.034428995, z: -0.8130595, w: 0.52437717}
+  m_LocalPosition: {x: 0.012648719, y: -0.0063475743, z: -0.00093182473}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4072582485602670}
+  m_Father: {fileID: 4709441710159780}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 13.339481, y: -26.329882, z: 111.22704}
+--- !u!1 &1328421336776310
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4072582485602670}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Index3_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4072582485602670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328421336776310}
+  m_LocalRotation: {x: 0.23531887, y: 0.0024209756, z: 0.14522168, w: 0.9610046}
+  m_LocalPosition: {x: 0.00633629, y: -0.0011344666, z: -5.769853E-05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4543911016756808}
+  m_Father: {fileID: 4298764830618600}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 26.994814, y: 3.6518502, z: -16.30957}
+--- !u!1 &1407943390398571
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4543911016756808}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Index4_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4543911016756808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407943390398571}
+  m_LocalRotation: {x: -0.6454995, y: 0, z: -0, w: 0.7637607}
+  m_LocalPosition: {x: 0.0051445398, y: -0.0012604132, z: -0.00017771777}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4072582485602670}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -80.40628, y: -0, z: 0}
+--- !u!1 &1936619606087487
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4641904091421654}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Middle1_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4641904091421654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936619606087487}
+  m_LocalRotation: {x: -0.18840054, y: 0.7624049, z: 0.013318641, w: 0.6189237}
+  m_LocalPosition: {x: -0.015195053, y: 0.0036871992, z: -0.021605879}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4357028931613687}
+  m_Father: {fileID: 4080607890112104}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -137.64325, y: -71.57886, z: 121.026596}
+--- !u!1 &1986322365675099
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4357028931613687}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Middle2_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4357028931613687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986322365675099}
+  m_LocalRotation: {x: 0.41478086, y: -0.27591982, z: -0.64157045, w: 0.58327746}
+  m_LocalPosition: {x: 0.005093226, y: -0.009964867, z: -0.0056022843}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4448606415993467}
+  m_Father: {fileID: 4641904091421654}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 58.990757, y: -12.142666, z: 88.56332}
+--- !u!1 &1426244390630985
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4448606415993467}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Middle3_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4448606415993467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426244390630985}
+  m_LocalRotation: {x: -0.08595244, y: 0.1063758, z: 0.054185152, w: 0.989121}
+  m_LocalPosition: {x: 0.0043853284, y: 0.0007051174, z: 8.128906E-05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4119432536061777}
+  m_Father: {fileID: 4357028931613687}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -9.35078, y: -12.694452, z: -5.2287607}
+--- !u!1 &1721133085665207
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4119432536061777}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Middle4_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4119432536061777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721133085665207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.005642842, y: -0.0022195203, z: 0.00032590344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4448606415993467}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!1 &1762229920844972
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4312569487342586}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Pinky1_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4312569487342586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762229920844972}
+  m_LocalRotation: {x: -0.52128327, y: -0.007804769, z: -0.19441085, w: 0.8309075}
+  m_LocalPosition: {x: -0.003261922, y: -0.0018806964, z: -0.02091467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4122278989599873}
+  m_Father: {fileID: 4080607890112104}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -62.134083, y: 12.454035, z: 18.815826}
+--- !u!1 &1092646881471822
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4122278989599873}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Pinky2_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4122278989599873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092646881471822}
+  m_LocalRotation: {x: -0.3364326, y: 0.644015, z: -0.40710157, w: 0.55346745}
+  m_LocalPosition: {x: 0.00015885364, y: -0.005930268, z: -0.0100157745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4531246887339850}
+  m_Father: {fileID: 4312569487342586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -93.56592, y: -26.037426, z: 100.32066}
+--- !u!1 &1428375527494162
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4531246887339850}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Pinky3_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4531246887339850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428375527494162}
+  m_LocalRotation: {x: 0.128261, y: -0.02587049, z: 0.186094, w: 0.9737807}
+  m_LocalPosition: {x: 0.0022012377, y: -0.00026185563, z: 0.0013420046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4373247078106879}
+  m_Father: {fileID: 4122278989599873}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 13.965172, y: 5.6310124, z: -20.947868}
+--- !u!1 &1322191224691881
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4373247078106879}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Pinky4_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4373247078106879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322191224691881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0049671256, y: -0.0011412082, z: 0.0011626091}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4531246887339850}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!1 &1847288467808950
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4022816139142885}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Ring1_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4022816139142885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847288467808950}
+  m_LocalRotation: {x: -0.1060101, y: 0.6345017, z: -0.5025324, w: 0.5776077}
+  m_LocalPosition: {x: -0.008643943, y: -0.0006788906, z: -0.022702524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4787696822586813}
+  m_Father: {fileID: 4080607890112104}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -77.2265, y: -38.78789, z: 113.45587}
+--- !u!1 &1492189322928926
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4787696822586813}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Ring2_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4787696822586813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492189322928926}
+  m_LocalRotation: {x: 0.081778795, y: -0.1583709, z: -0.48425436, w: 0.8565796}
+  m_LocalPosition: {x: 0.008535816, y: -0.0018115839, z: 0.002511282}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4968820976583228}
+  m_Father: {fileID: 4022816139142885}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 17.4008, y: 11.076011, z: 60.662106}
+--- !u!1 &1595601610041714
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4968820976583228}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Ring3_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4968820976583228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595601610041714}
+  m_LocalRotation: {x: 0.15914519, y: -0.063457005, z: 0.19812293, w: 0.96508723}
+  m_LocalPosition: {x: 0.007818773, y: -0.0034053572, z: 0.0013213767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4387368098082846}
+  m_Father: {fileID: 4787696822586813}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 16.67946, y: 10.692833, z: -21.630205}
+--- !u!1 &1569183491152965
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4387368098082846}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Ring4_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4387368098082846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569183491152965}
+  m_LocalRotation: {x: -0.00016278902, y: -4.4822034E-05, z: -0.002265152, w: 0.99999744}
+  m_LocalPosition: {x: 0.0058734384, y: -0.0014778724, z: 0.00092782424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4968820976583228}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.018642565, y: 0.0051784683, z: 0.2595667}
+--- !u!1 &1746547341800844
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4683033212441711}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Thumb1_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4683033212441711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746547341800844}
+  m_LocalRotation: {x: -0.087630555, y: 0.7264512, z: 0.022213686, w: 0.681246}
+  m_LocalPosition: {x: -0.0154757155, y: -0.0039816527, z: -0.002985001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4011612592180727}
+  m_Father: {fileID: 4080607890112104}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -129.10759, y: -83.5535, z: 120.18396}
+--- !u!1 &1128631498818414
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4011612592180727}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Thumb2_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4011612592180727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128631498818414}
+  m_LocalRotation: {x: 0.13086022, y: 0.25245887, z: -0.03057963, w: 0.95823014}
+  m_LocalPosition: {x: 0.0063579064, y: -0.0031155522, z: -0.0058582537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4160274046944893}
+  m_Father: {fileID: 4683033212441711}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 15.682153, y: -29.46098, z: -0.49150345}
+--- !u!1 &1560342280248052
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4160274046944893}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Thumb3_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4160274046944893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560342280248052}
+  m_LocalRotation: {x: -0.32324812, y: 0.2112757, z: 0.22621267, w: 0.89426005}
+  m_LocalPosition: {x: 0.006561409, y: 0.00052438764, z: -0.0030558072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4922456962161116}
+  m_Father: {fileID: 4011612592180727}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -34.51399, y: -31.608784, z: -18.341555}
+--- !u!1 &1598605664895697
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4922456962161116}
+  m_Layer: 8
+  m_Name: AK47Melee:pasted__pasted__pasted__Thumb4_LFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4922456962161116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598605664895697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.008129317, y: -0.0029793412, z: -0.002613635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4160274046944893}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!1 &1166987226916558
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4359204293522984}
+  - component: {fileID: 33084596873977310}
+  - component: {fileID: 23115697046791400}
+  m_Layer: 8
+  m_Name: SoldierSleeve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4359204293522984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166987226916558}
+  m_LocalRotation: {x: 0.47428322, y: 0.23498994, z: -0.39616287, w: -0.75026006}
+  m_LocalPosition: {x: 0.060500138, y: 0.0029998168, z: -0.0013996628}
+  m_LocalScale: {x: 0.19461583, y: 0.19461553, z: 0.19461592}
+  m_Children: []
+  m_Father: {fileID: 4823628206035540}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -63.909615, y: -1.3282161, z: -54.842632}
+--- !u!33 &33084596873977310
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166987226916558}
+  m_Mesh: {fileID: 4300000, guid: a90471547060b174b917e33ea8d39fcd, type: 2}
+--- !u!23 &23115697046791400
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166987226916558}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7ec8489f44f18c946b4a6593761b5fd2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
