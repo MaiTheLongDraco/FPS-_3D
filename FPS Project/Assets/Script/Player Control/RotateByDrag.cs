@@ -24,7 +24,7 @@ public class RotateByDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         rotationX = Mathf.Clamp(rotationX, minPicht, maxPicht);
         playerTran.transform.Rotate(0, -rotationY, 0);
         Debug.Log($" rotationX {rotationX}");
-        GunTran.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
+        // GunTran.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
         cameraTran.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
     }
     public void SetGunTranform(Gun currenGun)

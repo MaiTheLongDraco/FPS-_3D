@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,8 +19,13 @@ public class Gun : MonoBehaviour
     [SerializeField] private UnityEvent onShoot;
     public UnityEvent OnShoot { get => onShoot; set => onShoot = value; }
     public bool IsOutOfAmmo;
+    public Transform testLookAT;
     private void Start()
     {
+    }
+    private void Update()
+    {
+        // LookAtCenter();
     }
     protected void Shoot()
     {
@@ -61,5 +67,12 @@ public class Gun : MonoBehaviour
     public void ReloadAmmo()
     {
         this.GetComponent<AmmoSystem>().ReLoadAmmoBtn();
+    }
+    private void LookAtCenter()
+    {
+        print($"Loook at");
+        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
+        transform.DOLookAt(worldCenter, .5f);
     }
 }
