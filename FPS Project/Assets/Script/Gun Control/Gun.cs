@@ -13,7 +13,6 @@ public class Gun : MonoBehaviour
     [SerializeField] protected Camera fpsCam;
     [SerializeField] protected float fireRate;
     [SerializeField] protected float timeInterval;
-    [SerializeField] protected Transform shootPoint;
     [SerializeField] protected ParticleSystem impactPrefab;
     [SerializeField] protected RawImage _crossHair;
     [SerializeField] private UnityEvent onShoot;
@@ -22,6 +21,12 @@ public class Gun : MonoBehaviour
     public Transform testLookAT;
     private void Start()
     {
+        impactPrefab = GetComponentInChildren<ParticleSystem>();
+        fpsCam = GetComponentInParent<Camera>();
+    }
+    private void OnEnable()
+    {
+        impactPrefab.Stop();
     }
     private void Update()
     {
