@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private UnityEvent onShoot;
     public UnityEvent OnShoot { get => onShoot; set => onShoot = value; }
     public bool IsOutOfAmmo;
+    public WeaponType weaponType;
     public Transform testLookAT;
     private void Start()
     {
@@ -34,6 +35,7 @@ public class Gun : MonoBehaviour
     }
     protected void Shoot()
     {
+        if (weaponType == WeaponType.MEELEE) return;
         impactPrefab.Play();
         OnShoot?.Invoke();
         RaycastHit hit;
@@ -80,4 +82,9 @@ public class Gun : MonoBehaviour
         Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
         transform.DOLookAt(worldCenter, .5f);
     }
+}
+public enum WeaponType
+{
+    GUN,
+    MEELEE
 }
