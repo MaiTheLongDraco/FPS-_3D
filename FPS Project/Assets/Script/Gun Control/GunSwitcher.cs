@@ -70,5 +70,8 @@ public class GunSwitcher : MonoBehaviour
     {
         CurrentGun.ReloadAmmo();
     }
-
+    public void AddGunToList(GameObject purchaseGun)
+    {
+        guns.Add(purchaseGun);
+    }
 }

@@ -2361,7 +2361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6000820748055954777
 Transform:
   m_ObjectHideFlags: 0
@@ -2424,6 +2424,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   IsOutOfAmmo: 0
+  weaponType: 0
   testLookAT: {fileID: 0}
 --- !u!114 &6004990815600685660
 MonoBehaviour:

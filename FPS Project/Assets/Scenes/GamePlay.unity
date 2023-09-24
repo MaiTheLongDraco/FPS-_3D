@@ -9109,7 +9109,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1433815594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1643218981}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: WatchAds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433815594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10219,6 +10231,13 @@ MonoBehaviour:
   - {fileID: 1624680798}
   - {fileID: 1437027371}
   - {fileID: 638643944}
+  gunOnBag:
+  - {fileID: 1307628033271212}
+  - {fileID: 1046781402058942}
+  - {fileID: 1705205588462025}
+  - {fileID: 1224536632098036}
+  - {fileID: 1260433152480203}
+  - {fileID: 1593276552874253}
   gunIndex: 0
   mainPos: {fileID: 1098064826}
   minorPos: {x: 0, y: 0, z: 0}
@@ -10227,7 +10246,10 @@ MonoBehaviour:
   gunNameTxt: {fileID: 792229498}
   priceTxt: {fileID: 2056119312}
   coinAmountTxt: {fileID: 1360677443}
+  buyBtn: {fileID: 1708725331}
+  addCoinBtn: {fileID: 1433815593}
   coinAmount: 1000
+  gunSwitcher: {fileID: 1979569961}
 --- !u!1001 &1680496234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12864,12 +12886,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guns:
-  - {fileID: 1307628033271212}
-  - {fileID: 1046781402058942}
-  - {fileID: 1705205588462025}
-  - {fileID: 1224536632098036}
-  - {fileID: 1260433152480203}
-  - {fileID: 1593276552874253}
   - {fileID: 670901907}
   CurrentGun: {fileID: 0}
   isButtonHeld: 0
@@ -14187,30 +14203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shotgun
       objectReference: {fileID: 0}
-    - target: {fileID: 551813585653420123, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 553486904612808769, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
-      propertyPath: range
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 553486904612808769, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
-      propertyPath: damage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 553486904612808769, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
-      propertyPath: fireRate
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 553486904612808769, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
-    - target: {fileID: 553486904612808769, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
-      propertyPath: timeInterval
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 553486904612808774, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
       propertyPath: ammoPerGun
       value: 
@@ -14263,10 +14259,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7440611873333799458, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 300965af0e574be4ea8a66a31964655f, type: 3}
 --- !u!1001 &1113243805475285616
@@ -14285,32 +14277,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543007746}
     - target: {fileID: 1113243806424086255, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
-      propertyPath: range
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1113243806424086255, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
-      propertyPath: damage
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1113243806424086255, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
-      propertyPath: fireRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1113243806424086255, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
-    - target: {fileID: 1113243806424086255, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
-      propertyPath: timeInterval
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1114548618148827100, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
       propertyPath: m_Name
       value: 'AK47 '
-      objectReference: {fileID: 0}
-    - target: {fileID: 1114548618148827100, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115906013919188668, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
       propertyPath: m_RootOrder
@@ -14354,10 +14326,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115906013919188668, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8089904682821847983, guid: 0f38f338d13d4ec44a8d9e1e0e885756, type: 3}
-      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14422,25 +14390,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543007746}
     - target: {fileID: 1133034579225301867, guid: bbec5c22064e65b48a862d964d29e16c, type: 3}
-      propertyPath: range
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1133034579225301867, guid: bbec5c22064e65b48a862d964d29e16c, type: 3}
-      propertyPath: damage
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1133034579225301867, guid: bbec5c22064e65b48a862d964d29e16c, type: 3}
-      propertyPath: fireRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1133034579225301867, guid: bbec5c22064e65b48a862d964d29e16c, type: 3}
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
-    - target: {fileID: 1133034579225301867, guid: bbec5c22064e65b48a862d964d29e16c, type: 3}
-      propertyPath: timeInterval
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1134064087814108182, guid: bbec5c22064e65b48a862d964d29e16c, type: 3}
       propertyPath: m_Name
       value: Sniper_Anim
@@ -14523,30 +14475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963194228}
     m_Modifications:
-    - target: {fileID: 118496217515822646, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3314840480559707681, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
-      propertyPath: range
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3314840480559707681, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
-      propertyPath: damage
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3314840480559707681, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
-      propertyPath: fireRate
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3314840480559707681, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
-    - target: {fileID: 3314840480559707681, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
-      propertyPath: timeInterval
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3314840480559707682, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
       propertyPath: ammoPerGun
       value: 
@@ -14558,10 +14490,6 @@ PrefabInstance:
     - target: {fileID: 3315517735229805514, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
       propertyPath: m_Name
       value: M4_Anim
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315517735229805514, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3318911789731353081, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
       propertyPath: m_RootOrder
@@ -14664,10 +14592,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: M1911
       objectReference: {fileID: 0}
-    - target: {fileID: 6004329951829130116, guid: dcae3457f5708904eabe9fc23e19a8c3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6004990815600685660, guid: dcae3457f5708904eabe9fc23e19a8c3, type: 3}
       propertyPath: ammoPerGun
       value: 
@@ -14689,17 +14613,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963194228}
     m_Modifications:
-    - target: {fileID: 4428726705900780557, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8003361060769388289, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
       propertyPath: m_Name
       value: MP5_Anim
-      objectReference: {fileID: 0}
-    - target: {fileID: 8003361060769388289, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8004545943603902994, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
       propertyPath: ammoPerGun
@@ -14710,25 +14626,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543007746}
     - target: {fileID: 8004545943603903005, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
-      propertyPath: range
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004545943603903005, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004545943603903005, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
-      propertyPath: fireRate
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004545943603903005, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
-    - target: {fileID: 8004545943603903005, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
-      propertyPath: timeInterval
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8005729412610981530, guid: 9385daa8c9737eb4880ef47a5011cc6f, type: 3}
       propertyPath: m_RootOrder
       value: 4

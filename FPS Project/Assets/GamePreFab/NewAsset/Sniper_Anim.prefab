@@ -1392,18 +1392,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7bacaa04037ae459b8fcf45094e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
+  damage: 100
+  range: 1000
   fpsCam: {fileID: 0}
-  fireRate: 0
-  timeInterval: 0
-  shootPoint: {fileID: 0}
+  fireRate: 0.5
+  timeInterval: 0.5
   impactPrefab: {fileID: 0}
   _crossHair: {fileID: 0}
   onShoot:
     m_PersistentCalls:
       m_Calls: []
   IsOutOfAmmo: 0
+  weaponType: 0
   testLookAT: {fileID: 0}
 --- !u!114 &1133034579225301864
 MonoBehaviour:

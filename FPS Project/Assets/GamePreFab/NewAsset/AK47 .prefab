@@ -2408,7 +2408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1115906013919188668
 Transform:
   m_ObjectHideFlags: 0
@@ -2461,17 +2461,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7bacaa04037ae459b8fcf45094e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
+  damage: 15
+  range: 150
   fpsCam: {fileID: 0}
-  fireRate: 0
-  timeInterval: 0
+  fireRate: 0.2
+  timeInterval: 0.2
   impactPrefab: {fileID: 0}
   _crossHair: {fileID: 0}
   onShoot:
     m_PersistentCalls:
       m_Calls: []
   IsOutOfAmmo: 0
+  weaponType: 0
   testLookAT: {fileID: 0}
 --- !u!114 &1113243806424086224
 MonoBehaviour:
@@ -2700,6 +2701,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}

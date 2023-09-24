@@ -7,17 +7,23 @@ using UnityEngine.UI;
 public class ShopController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> pickUpGuns;
+    [SerializeField] private List<GameObject> gunOnBag;
     [SerializeField] private int gunIndex;
     [SerializeField] private Transform mainPos;
     [SerializeField] private Vector3 minorPos;
     [SerializeField] private float duration;
     [SerializeField] private PickUpGunInFo currentGun;
+    #region TextRegion
     [SerializeField] private Text gunNameTxt;
     [SerializeField] private Text priceTxt;
     [SerializeField] private Text coinAmountTxt;
-
+    #endregion
+    #region Button Region
+    [SerializeField] private Button buyBtn;
+    [SerializeField] private Button addCoinBtn;
+    #endregion
     [SerializeField] private int coinAmount;
-
+    [SerializeField] private GunSwitcher gunSwitcher;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +56,8 @@ public class ShopController : MonoBehaviour
         pickUpGuns[gunIndex].transform.DOMove(new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z), duration);
         SwitchGunInfo();
     }
+
+
     public void BackToPrevGun()
     {
         pickUpGuns[gunIndex].transform.position = new Vector3(minorPos.x, minorPos.y, pickUpGuns[gunIndex].transform.position.z);
@@ -73,14 +81,59 @@ public class ShopController : MonoBehaviour
     }
     public void Buy()
     {
-        if (coinAmount < currentGun.gunPrice || coinAmount <= 0)
+        if (coinAmount < currentGun.gunPrice || coinAmount <= 0 || currentGun.gunState == GunState.EQUIPTED)
             return;
         coinAmount -= currentGun.gunPrice;
         SetCoinAmountTxt(coinAmount.ToString());
         currentGun.gunState = GunState.EQUIPTED;
+        AddGunToBag();
+    }
+    private bool IsBought()
+    {
+        return currentGun.gunState == GunState.EQUIPTED;
     }
     private void SetCoinAmountTxt(string set)
     {
         coinAmountTxt.text = set;
+    }
+    public void WatchAds()
+    {
+        print("WATCH ADS");
+    }
+    private void AddGunToBag()
+    {
+        if (currentGun.gunState != GunState.EQUIPTED)
+            return;
+        var gunName = currentGun.gunName;
+        switch (gunName)
+        {
+            case "ShotGun":
+                {
+                    print("add shotgun");
+                    gunSwitcher.AddGunToList(gunOnBag[2]);
+                }
+                break;
+            case "AK47":
+                {
+                    print("add AK47");
+
+                    gunSwitcher.AddGunToList(gunOnBag[0]);
+                }
+                break;
+            case "M4A1":
+                {
+                    print("add M4A1");
+
+                    gunSwitcher.AddGunToList(gunOnBag[1]);
+                }
+                break;
+            case "M1911":
+                {
+                    print("add M1911");
+
+                    gunSwitcher.AddGunToList(gunOnBag[5]);
+                }
+                break;
+        }
     }
 }
