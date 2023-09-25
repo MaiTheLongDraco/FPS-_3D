@@ -23,7 +23,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Button addCoinBtn;
     #endregion
     [SerializeField] private int coinAmount;
-    [SerializeField] private GunSwitcher gunSwitcher;
+    [SerializeField] private GunSwitcher gunSwitcher => GunSwitcher.Instance;
 
     // Start is called before the first frame update
     void Start()

@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject pauseGamePanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject Shop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +41,17 @@ public class GameController : MonoBehaviour
     public void SetActiveLosePanel(bool isActive)
     {
         losePanel.SetActive(isActive);
+    }
+    public void SetActiveShop(bool set)
+    {
+        Shop.SetActive(set);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    public void PlayBtn()
+    {
+        SceneManager.LoadScene("GamePlay");
     }
 }

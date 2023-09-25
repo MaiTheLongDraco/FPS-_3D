@@ -4,7 +4,8 @@ using UnityEngine.Events;
 
 public class GunSwitcher : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> guns;
+    [SerializeField] private static List<GameObject> guns;
+    public static GunSwitcher Instance;
     private int gunIndex;
     private Transform currenGun;
     [SerializeField] private Gun CurrentGun;
@@ -14,6 +15,7 @@ public class GunSwitcher : MonoBehaviour
     {
         gunIndex = 0;
         SwitchGun();
+        DontDestroyOnLoad(this.gameObject);
     }
     public void CurrentGunShoot()
     {
