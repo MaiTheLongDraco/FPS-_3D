@@ -45,7 +45,11 @@ public class AmmoSystem : MonoBehaviour
     }
     private void DecreasePerGun()
     {
-        if (NumAmmoPerGun <= 0) return;
+        if (NumAmmoPerGun <= 0)
+        {
+            NumAmmoPerGun = 0;
+            return;
+        }
         // NumAmmoPerShoot = ResetAmmo;
         NumAmmoPerGun -= ResetAmmo;
         SetAmmoPerGunTxt(NumAmmoPerGun.ToString());
