@@ -2347,7 +2347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1115232175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4288,10 +4288,10 @@ MonoBehaviour:
   gunNameTxt: {fileID: 1653972786}
   priceTxt: {fileID: 1530083617}
   coinAmountTxt: {fileID: 385912681}
+  coinAmountTxtGlobal: {fileID: 464092749}
   buyBtn: {fileID: 683379217}
   addCoinBtn: {fileID: 1999538228}
   coinAmount: 1000
-  gunSwitcher: {fileID: 0}
 --- !u!1 &1922838634
 GameObject:
   m_ObjectHideFlags: 0

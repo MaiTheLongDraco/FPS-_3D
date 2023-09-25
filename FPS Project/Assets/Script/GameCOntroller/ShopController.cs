@@ -20,14 +20,14 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Text gunNameTxt;
     [SerializeField] private Text priceTxt;
     [SerializeField] private Text coinAmountTxt;
+    [SerializeField] private Text coinAmountTxtGlobal;
+
     #endregion
     #region Button Region
     [SerializeField] private Button buyBtn;
     [SerializeField] private Button addCoinBtn;
     #endregion
     [SerializeField] private int coinAmount;
-    [SerializeField] private GunSwitcher gunSwitcher;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +109,7 @@ public class ShopController : MonoBehaviour
     private void SetCoinAmountTxt(string set)
     {
         coinAmountTxt.text = set;
+        coinAmountTxtGlobal.text = set;
     }
     public void WatchAds()
     {
