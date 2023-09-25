@@ -4,18 +4,20 @@ using UnityEngine.Events;
 
 public class GunSwitcher : MonoBehaviour
 {
-    [SerializeField] private static List<GameObject> guns;
-    public static GunSwitcher Instance;
+    [SerializeField] private List<Weapon> guns;
+    [SerializeField] private List<GameObject> usingGun;
+
     private int gunIndex;
     private Transform currenGun;
     [SerializeField] private Gun CurrentGun;
     [SerializeField] private bool isButtonHeld;
-    public UnityEvent<Gun> OnchangeGun;
+    [SerializeField] private ShopController shopController;
     private void Start()
     {
+        shopController = FindObjectOfType<ShopController>();
         gunIndex = 0;
-        SwitchGun();
-        DontDestroyOnLoad(this.gameObject);
+        GetData();
+        ChangeGun();
     }
     public void CurrentGunShoot()
     {
@@ -36,22 +38,34 @@ public class GunSwitcher : MonoBehaviour
     {
         isButtonHeld = false;
     }
-    public void SwitchGun()
+    public void ChangeGun()
     {
         HandleGunIndex();
-        // guns[gunIndex].SetActive(true);
-        for (int i = 0; i < guns.Count; i++)
+        for (int i = 0; i < usingGun.Count; i++)
         {
             if (i == gunIndex)
             {
-                guns[i].SetActive(true);
-                currenGun = guns[i].transform;
-                CurrentGun = guns[gunIndex].GetComponent<Gun>();
-                OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
+                usingGun[i].SetActive(true);
+                currenGun = usingGun[i].transform;
+                CurrentGun = usingGun[i].GetComponent<Gun>();
+                // OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
             }
             else
             {
-                guns[i].SetActive(false);
+                print("disactive");
+                usingGun[i].SetActive(false);
+            }
+        }
+    }
+    public void GetData()
+    {
+        // guns[gunIndex].SetActive(true);
+        for (int i = 0; i < guns.Count; i++)
+        {
+            if (shopController.IsBoughtGunContain(guns[i].gunName) || guns[i].gunName == "Default")
+            {
+                usingGun.Add(guns[i].gun);
+                // OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
             }
         }
     }
@@ -63,7 +77,7 @@ public class GunSwitcher : MonoBehaviour
     private void HandleGunIndex()
     {
         gunIndex++;
-        if (gunIndex >= guns.Count)
+        if (gunIndex >= usingGun.Count)
         {
             gunIndex = 0;
         }
@@ -72,8 +86,10 @@ public class GunSwitcher : MonoBehaviour
     {
         CurrentGun.ReloadAmmo();
     }
-    public void AddGunToList(GameObject purchaseGun)
+    public void AddGunToList(string key, GameObject purchaseGun)
     {
-        guns.Add(purchaseGun);
+        Weapon weapon = new Weapon(key, purchaseGun);
+        guns.Add(weapon);
     }
+
 }

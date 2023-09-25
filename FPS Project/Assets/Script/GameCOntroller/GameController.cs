@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject Shop;
 
+
     // Start is called before the first frame update
     void Start()
     {

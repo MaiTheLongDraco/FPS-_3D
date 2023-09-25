@@ -6658,7 +6658,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1979569961}
         m_TargetAssemblyTypeName: GunSwitcher, Assembly-CSharp
-        m_MethodName: SwitchGun
+        m_MethodName: ChangeGun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10783,24 +10783,20 @@ MonoBehaviour:
   - {fileID: 1624680798}
   - {fileID: 1437027371}
   - {fileID: 638643944}
-  gunOnBag:
-  - {fileID: 1307628033271212}
-  - {fileID: 1046781402058942}
-  - {fileID: 1705205588462025}
-  - {fileID: 1224536632098036}
-  - {fileID: 1260433152480203}
-  - {fileID: 1593276552874253}
+  boughtGuns: []
   gunIndex: 0
   mainPos: {fileID: 1098064826}
   minorPos: {x: 0, y: 0, z: 0}
   duration: 0.5
   currentGun: {fileID: 0}
+  weapons: []
   gunNameTxt: {fileID: 792229498}
   priceTxt: {fileID: 2056119312}
   coinAmountTxt: {fileID: 1360677443}
   buyBtn: {fileID: 1708725331}
   addCoinBtn: {fileID: 1433815593}
   coinAmount: 1000
+  gunSwitcher: {fileID: 0}
 --- !u!1 &1645957052
 GameObject:
   m_ObjectHideFlags: 0
@@ -13507,24 +13503,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guns:
-  - {fileID: 670901907}
+  - gunName: AK47
+    gun: {fileID: 1307628033271212}
+  - gunName: M4A1
+    gun: {fileID: 1046781402058942}
+  - gunName: ShotGun
+    gun: {fileID: 1705205588462025}
+  - gunName: 
+    gun: {fileID: 1224536632098036}
+  - gunName: 
+    gun: {fileID: 1260433152480203}
+  - gunName: M1911
+    gun: {fileID: 1593276552874253}
+  - gunName: Default
+    gun: {fileID: 670901907}
+  usingGun: []
   CurrentGun: {fileID: 0}
   isButtonHeld: 0
-  OnchangeGun:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RotateByDrag, Assembly-CSharp
-        m_MethodName: SetGunTranform
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  shopController: {fileID: 0}
 --- !u!1001 &1987959215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15227,6 +15223,10 @@ PrefabInstance:
     - target: {fileID: 6004329951829130116, guid: dcae3457f5708904eabe9fc23e19a8c3, type: 3}
       propertyPath: m_Name
       value: M1911
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004329951829130116, guid: dcae3457f5708904eabe9fc23e19a8c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6004990815600685660, guid: dcae3457f5708904eabe9fc23e19a8c3, type: 3}
       propertyPath: ammoPerGun

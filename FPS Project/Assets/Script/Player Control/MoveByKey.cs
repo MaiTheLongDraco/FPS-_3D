@@ -13,11 +13,23 @@ public class MoveByKey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(fixedJoystick.gameObject);
+        fixedJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+        print($"joystick name {GameObject.Find("Fixed Joystick").name}");
+    }
+    private void OnMouseDown()
+    {
+        fixedJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+    }
+    private void OnEnable()
+    {
+        fixedJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // fixedJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
         if (isSpeedUp)
         {
             moveSpeed = desireSpeed;

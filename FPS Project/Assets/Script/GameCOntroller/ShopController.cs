@@ -1,18 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> pickUpGuns;
-    [SerializeField] private List<GameObject> gunOnBag;
+    [SerializeField] private List<Weapon> boughtGuns;
     [SerializeField] private int gunIndex;
     [SerializeField] private Transform mainPos;
     [SerializeField] private Vector3 minorPos;
     [SerializeField] private float duration;
     [SerializeField] private PickUpGunInFo currentGun;
+    [SerializeField] private List<Weapon> weapons;
     #region TextRegion
     [SerializeField] private Text gunNameTxt;
     [SerializeField] private Text priceTxt;
@@ -23,11 +26,13 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Button addCoinBtn;
     #endregion
     [SerializeField] private int coinAmount;
-    [SerializeField] private GunSwitcher gunSwitcher => GunSwitcher.Instance;
+    [SerializeField] private GunSwitcher gunSwitcher;
 
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+        InitListWeapon();
         minorPos = mainPos.position + Vector3.right * 5;
         SwitchGunInfo();
         SetCoinAmountTxt(coinAmount.ToString());
@@ -37,6 +42,15 @@ public class ShopController : MonoBehaviour
     void Update()
     {
 
+    }
+    public bool IsBoughtGunContain(string key)
+    {
+        foreach (var gun in boughtGuns)
+        {
+            if (gun.gunName == key)
+                return true;
+        }
+        return false;
     }
     private void SwitchGunInfo()
     {
@@ -105,35 +119,32 @@ public class ShopController : MonoBehaviour
         if (currentGun.gunState != GunState.EQUIPTED)
             return;
         var gunName = currentGun.gunName;
-        switch (gunName)
+        foreach (var weapon in weapons)
         {
-            case "ShotGun":
-                {
-                    print("add shotgun");
-                    gunSwitcher.AddGunToList(gunOnBag[2]);
-                }
-                break;
-            case "AK47":
-                {
-                    print("add AK47");
-
-                    gunSwitcher.AddGunToList(gunOnBag[0]);
-                }
-                break;
-            case "M4A1":
-                {
-                    print("add M4A1");
-
-                    gunSwitcher.AddGunToList(gunOnBag[1]);
-                }
-                break;
-            case "M1911":
-                {
-                    print("add M1911");
-
-                    gunSwitcher.AddGunToList(gunOnBag[5]);
-                }
-                break;
+            if (weapon.gunName == gunName)
+            {
+                boughtGuns.Add(weapon);
+            }
         }
+    }
+    private void InitListWeapon()
+    {
+        foreach (var gun in pickUpGuns)
+        {
+            var key = gun.GetComponent<PickUpGunInFo>().gunName;
+            Weapon newWeapon = new Weapon(key, gun);
+            weapons.Add(newWeapon);
+        }
+    }
+}
+[Serializable]
+public class Weapon
+{
+    public string gunName;
+    public GameObject gun;
+    public Weapon(string name, GameObject gun)
+    {
+        gunName = name;
+        this.gun = gun;
     }
 }
