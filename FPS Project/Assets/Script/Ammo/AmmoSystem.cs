@@ -12,6 +12,9 @@ public class AmmoSystem : MonoBehaviour
     [SerializeField] private Gun gun;
     [SerializeField] private AnimationControl animationControl;
 
+    public int NumAmmoPerShoot1 { get => NumAmmoPerShoot; set => NumAmmoPerShoot = value; }
+    public int ResetAmmo1 { get => ResetAmmo; set => ResetAmmo = value; }
+
     // Start is called before the first frame update
     void Start()
     {

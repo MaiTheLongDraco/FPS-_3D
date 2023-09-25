@@ -84,7 +84,13 @@ public class GunSwitcher : MonoBehaviour
     }
     public void ReloadCurrentGun()
     {
+        var resetAmmo = currenGun.GetComponent<AmmoSystem>().ResetAmmo1;
+        var currentAmmo = currenGun.GetComponent<AmmoSystem>().NumAmmoPerShoot1;
+
+        if (currentAmmo >= resetAmmo)
+            return;
         CurrentGun.ReloadAmmo();
+        currenGun.GetComponent<AnimationControl>().SetTriggerAnim("Reload");
     }
     public void AddGunToList(string key, GameObject purchaseGun)
     {

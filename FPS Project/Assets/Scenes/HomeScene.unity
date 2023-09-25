@@ -1053,7 +1053,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1548118182}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &307186076
 GameObject:
@@ -4334,6 +4334,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240145873}
   m_CullTransparentMesh: 1
+--- !u!1001 &1260389364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1548118182}
+    m_Modifications:
+    - target: {fileID: 1747397352782728, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_Name
+      value: MP5_Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+--- !u!4 &1260389365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4483413133328874, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+  m_PrefabInstance: {fileID: 1260389364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1260389366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1747397352782728, guid: 11062d1561fd38347b4f8f46cd6ce9b5, type: 3}
+  m_PrefabInstance: {fileID: 1260389364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260389367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260389366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78be111852a980a47aff9cbd3b89aea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: MP5
+  gunPrice: 150
+  gunState: 0
+--- !u!114 &1260389368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260389366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107ed20b4e2ba114d88834c111e52a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
 --- !u!1 &1275888778
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,6 +5142,7 @@ Transform:
   - {fileID: 2032285075}
   - {fileID: 1167150708}
   - {fileID: 1619481394}
+  - {fileID: 1260389365}
   - {fileID: 295833071}
   m_Father: {fileID: 890121553}
   m_RootOrder: 1
@@ -5874,6 +5970,7 @@ MonoBehaviour:
   - {fileID: 2032285074}
   - {fileID: 1167150707}
   - {fileID: 1619481393}
+  - {fileID: 1260389366}
   boughtGuns: []
   gunIndex: 0
   mainPos: {fileID: 295833071}
