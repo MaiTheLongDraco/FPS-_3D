@@ -10,10 +10,17 @@ public class AmmoSystem : MonoBehaviour
     [SerializeField] private int NumAmmoPerGun;
     [SerializeField] private float timeToReload;
     [SerializeField] private Gun gun;
+    [SerializeField] private AnimationControl animationControl;
+
     // Start is called before the first frame update
     void Start()
     {
         gun.OnShoot.AddListener(DecreasePerShoot);
+    }
+
+    private void Awake()
+    {
+        animationControl = GetComponent<AnimationControl>();
     }
     private void OnEnable()
     {
@@ -38,6 +45,7 @@ public class AmmoSystem : MonoBehaviour
         if (NumAmmoPerShoot <= 0)
         {
             gun.IsOutOfAmmo = true;
+            animationControl.SetTriggerAnim("Reload");
             Invoke("WaitReloadAmmo", timeToReload);
         }
         SetAmmoPerShootTxt(NumAmmoPerShoot.ToString());
