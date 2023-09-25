@@ -25,7 +25,6 @@ public class PlayerHeath : MonoBehaviour
     #endregion
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         originalColor = _splashScreen.GetComponent<RawImage>().color;
         targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
     }
