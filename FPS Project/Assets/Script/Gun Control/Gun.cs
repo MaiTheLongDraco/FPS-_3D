@@ -19,11 +19,14 @@ public class Gun : MonoBehaviour
     public UnityEvent OnShoot { get => onShoot; set => onShoot = value; }
     public bool IsOutOfAmmo;
     public WeaponType weaponType;
+    public string[] layermask = { "Enemy", "EnemyHead" };
+    private LayerMask targetLayer;
     public Transform testLookAT;
     private void Start()
     {
         impactPrefab = GetComponentInChildren<ParticleSystem>();
         fpsCam = GetComponentInParent<Camera>();
+        targetLayer = LayerMask.GetMask(layermask);
     }
     private void OnEnable()
     {
@@ -39,16 +42,23 @@ public class Gun : MonoBehaviour
         impactPrefab.Play();
         OnShoot?.Invoke();
         RaycastHit hit;
-        var isCollide = Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
+        var isCollide = Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, targetLayer);
         if (isCollide)
         {
             _crossHair.color = Color.red;
             StartCoroutine(ResetCrosshairColor());
             var target = hit.transform.GetComponent<Enemy>();
-
+            if (hit.transform.tag == "EnemyHead")
+            {
+                print("head Shot ++++");
+                var enemy = hit.transform.GetComponentInParent<Enemy>();
+                enemy.TakeDamage(1000);
+                enemy.SetState(target._deadState);
+            }
             Debug.Log(target.IsUnityNull());
             if (target != null)
             {
+                print("enemy body ++++");
                 target.SetState(target._isAttack);
                 target.TakeDamage(damage);
             }

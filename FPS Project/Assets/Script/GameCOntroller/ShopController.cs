@@ -30,6 +30,7 @@ public class ShopController : MonoBehaviour
     #endregion
     [SerializeField] private int coinAmount;
     [SerializeField] private Sprite equiptedBg;
+    [SerializeField] private Sprite unPurchaseBg;
     [SerializeField] private Sprite unequiptBG;
     [SerializeField] private Text buyTxt;
 
@@ -72,6 +73,20 @@ public class ShopController : MonoBehaviour
         currentGun = pickUpGuns[gunIndex].GetComponent<PickUpGunInFo>();
         SetTextForGunNameTxt(currentGun.gunName);
         SetTextForPriceTxt(currentGun.gunPrice.ToString());
+        switch (currentGun.gunState)
+        {
+            case GunState.UN_PURCHASED:
+                {
+                    AssignNewInfoTOBuyBtn(unPurchaseBg, "MUA");
+                }
+                break;
+            case GunState.EQUIPTED:
+                {
+                    AssignNewInfoTOBuyBtn(equiptedBg, "ĐÃ TRANG BỊ");
+                }
+                break;
+            case GunState.UN_EQUIPTED: break;
+        }
     }
     public void MoveToNextGun()
     {
