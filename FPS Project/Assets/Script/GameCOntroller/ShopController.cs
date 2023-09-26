@@ -1,10 +1,10 @@
+using System.Globalization;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
+using System.IO;
 
 public class ShopController : MonoBehaviour
 {
@@ -33,6 +33,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Sprite unPurchaseBg;
     [SerializeField] private Sprite unequiptBG;
     [SerializeField] private Text buyTxt;
+    [SerializeField] private List<string> listString;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,10 @@ public class ShopController : MonoBehaviour
         minorPos = mainPos.position + Vector3.right * 5;
         SwitchGunInfo();
         SetCoinAmountTxt(coinAmount.ToString());
+    }
+    private void Awake()
+    {
+        ReadJsonToData();
     }
 
     // Update is called once per frame
@@ -150,13 +155,35 @@ public class ShopController : MonoBehaviour
     {
         if (currentGun.gunState != GunState.EQUIPTED)
             return;
+
         var gunName = currentGun.gunName;
         foreach (var weapon in weapons)
         {
             if (weapon.gunName == gunName)
             {
+                if (boughtGuns.Contains(weapon)) return;
                 boughtGuns.Add(weapon);
+                ListData listData = new ListData(boughtGuns);
+                WriteDataToJson(listData);
             }
+        }
+    }
+    private void WriteDataToJson(object obj)
+    {
+        print($"add gun data {Application.persistentDataPath}");
+        string jsonData = JsonUtility.ToJson(obj);
+        File.WriteAllText(Application.persistentDataPath + $"/gunData.json", jsonData);
+    }
+    private void ReadJsonToData()
+    {
+        var filePath = Application.persistentDataPath + $"/gunData.json";
+        if (!File.Exists(filePath)) return;
+        string jsonData = File.ReadAllText(Application.persistentDataPath + $"/gunData.json");
+        var gunData = JsonUtility.FromJson<ListData>(jsonData);
+        print($"gunda count {gunData.listWeapon.Count}");
+        foreach (var gun in gunData.listWeapon)
+        {
+            boughtGuns.Add(gun);
         }
     }
     private void InitListWeapon()
@@ -178,5 +205,13 @@ public class Weapon
     {
         gunName = name;
         this.gun = gun;
+    }
+}
+public class ListData
+{
+    public List<Weapon> listWeapon;
+    public ListData(List<Weapon> listWeapon)
+    {
+        this.listWeapon = listWeapon;
     }
 }
