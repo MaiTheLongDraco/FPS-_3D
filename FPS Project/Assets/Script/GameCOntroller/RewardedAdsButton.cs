@@ -27,6 +27,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     private void Start()
     {
         shopController = FindObjectOfType<ShopController>();
+        _showAdButton.onClick.AddListener(ShowAd);
+        _addCoinBtn.onClick.AddListener(ShowAd);
     }
 
     // Call this public method when you want to get an ad ready to show.
@@ -45,8 +47,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId))
         {
             // Configure the button to call the ShowAd() method when clicked:
-            _showAdButton.onClick.AddListener(ShowAd);
-            _addCoinBtn.onClick.AddListener(ShowAd);
+
             // Enable the button for users to click:
             _showAdButton.interactable = true;
             _addCoinBtn.interactable = true;
