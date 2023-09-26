@@ -29,6 +29,10 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Button addCoinBtn;
     #endregion
     [SerializeField] private int coinAmount;
+    [SerializeField] private Sprite equiptedBg;
+    [SerializeField] private Sprite unequiptBG;
+    [SerializeField] private Text buyTxt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +61,11 @@ public class ShopController : MonoBehaviour
                 return true;
         }
         return false;
+    }
+    private void AssignNewInfoTOBuyBtn(Sprite sprite, string newTxt)
+    {
+        buyBtn.GetComponent<Image>().sprite = sprite;
+        buyTxt.text = newTxt;
     }
     private void SwitchGunInfo()
     {
@@ -106,6 +115,7 @@ public class ShopController : MonoBehaviour
         coinAmount -= currentGun.gunPrice;
         SetCoinAmountTxt(coinAmount.ToString());
         currentGun.gunState = GunState.EQUIPTED;
+        AssignNewInfoTOBuyBtn(equiptedBg, "ĐÃ TRANG BỊ");
         AddGunToBag();
     }
     private bool IsBought()

@@ -1751,10 +1751,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 79
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 92
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -6064,6 +6064,9 @@ MonoBehaviour:
   buyBtn: {fileID: 683379217}
   addCoinBtn: {fileID: 1999538228}
   coinAmount: 1000
+  equiptedBg: {fileID: 21300000, guid: 577652ee7f806304496bfde3c85bddbf, type: 3}
+  unequiptBG: {fileID: 21300000, guid: f7926edc37195ce4aa1c615555aeb704, type: 3}
+  buyTxt: {fileID: 543580706}
 --- !u!1 &1922838634
 GameObject:
   m_ObjectHideFlags: 0
