@@ -184,6 +184,7 @@ public class ShopController : MonoBehaviour
         foreach (var gun in gunData.listWeapon)
         {
             boughtGuns.Add(gun);
+            gun.gun.GetComponent<PickUpGunInFo>().gunState = GunState.EQUIPTED;
         }
     }
     private void InitListWeapon()
@@ -215,3 +216,4 @@ public class ListData
         this.listWeapon = listWeapon;
     }
 }
+
