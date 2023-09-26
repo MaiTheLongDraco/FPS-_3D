@@ -7,10 +7,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject pauseGamePanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject Shop;
+    [SerializeField] private RewardedAdsButton rewardedAdsButton;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -52,5 +52,9 @@ public class GameController : MonoBehaviour
     public void PlayBtn()
     {
         SceneManager.LoadScene("GamePlay");
+    }
+    public void LoadAds()
+    {
+        rewardedAdsButton.LoadAd();
     }
 }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
+    public static ShopController Instance;
     [SerializeField] private List<GameObject> pickUpGuns;
     [SerializeField] private List<Weapon> boughtGuns;
     [SerializeField] private int gunIndex;
@@ -42,6 +43,11 @@ public class ShopController : MonoBehaviour
     void Update()
     {
 
+    }
+    public void AddCoint(int extraCoin)
+    {
+        coinAmount += extraCoin;
+        SetCoinAmountTxt(coinAmount.ToString());
     }
     public bool IsBoughtGunContain(string key)
     {
