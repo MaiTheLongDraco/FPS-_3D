@@ -13,7 +13,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] private List<Weapon> boughtGuns;
     [SerializeField] private int gunIndex;
     [SerializeField] private Transform mainPos;
-    [SerializeField] private Vector3 minorPos;
+    [SerializeField] private Transform minorPos;
     [SerializeField] private float duration;
     [SerializeField] private PickUpGunInFo currentGun;
     [SerializeField] private List<Weapon> weapons;
@@ -21,7 +21,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Text gunNameTxt;
     [SerializeField] private Text priceTxt;
     [SerializeField] private Text coinAmountTxt;
-    [SerializeField] private Text coinAmountTxtGlobal;
+    // [SerializeField] private Text coinAmountTxtGlobal;
 
     #endregion
     #region Button Region
@@ -40,7 +40,6 @@ public class ShopController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         InitListWeapon();
-        minorPos = mainPos.position + Vector3.right * 5;
         SwitchGunInfo();
         SetCoinAmountTxt(coinAmount.ToString());
     }
@@ -95,7 +94,8 @@ public class ShopController : MonoBehaviour
     }
     public void MoveToNextGun()
     {
-        pickUpGuns[gunIndex].transform.position = new Vector3(minorPos.x, minorPos.y, pickUpGuns[gunIndex].transform.position.z);
+        var minorPos1 = minorPos.transform.position;
+        pickUpGuns[gunIndex].transform.position = new Vector3(minorPos1.x, minorPos1.y, pickUpGuns[gunIndex].transform.position.z);
         gunIndex++;
         if (gunIndex >= pickUpGuns.Count)
         {
@@ -109,7 +109,8 @@ public class ShopController : MonoBehaviour
 
     public void BackToPrevGun()
     {
-        pickUpGuns[gunIndex].transform.position = new Vector3(minorPos.x, minorPos.y, pickUpGuns[gunIndex].transform.position.z);
+        var minorPos1 = minorPos.transform.position;
+        pickUpGuns[gunIndex].transform.position = new Vector3(minorPos1.x, minorPos1.y, pickUpGuns[gunIndex].transform.position.z);
         gunIndex--;
         if (gunIndex < 0)
         {
@@ -145,7 +146,7 @@ public class ShopController : MonoBehaviour
     private void SetCoinAmountTxt(string set)
     {
         coinAmountTxt.text = set;
-        coinAmountTxtGlobal.text = set;
+        // coinAmountTxtGlobal.text = set;
     }
     public void WatchAds()
     {
