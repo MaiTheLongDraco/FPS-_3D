@@ -8,4 +8,8 @@ public class HomeScene : SSController
     {
         SSSceneManager.Instance.Screen("ShopScene");
     }
+    public void LoadGamePlayScene()
+    {
+        SSSceneManager.Instance.Screen("GamePlay");
+    }
 }

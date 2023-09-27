@@ -505,12 +505,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163262216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1062.64, y: -597.73505, z: 100}
+  m_LocalScale: {x: 0.10691672, y: 0.10691672, z: 0.10691672}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1058864883}
-  m_RootOrder: 2
+  m_Father: {fileID: 363143716}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &163262218
 MonoBehaviour:
@@ -542,7 +542,7 @@ MonoBehaviour:
   coinAmountTxt: {fileID: 1944212965}
   buyBtn: {fileID: 1472063802}
   addCoinBtn: {fileID: 1090495794}
-  coinAmount: 1000
+  coinAmount: 100000
   equiptedBg: {fileID: 21300000, guid: 577652ee7f806304496bfde3c85bddbf, type: 3}
   unPurchaseBg: {fileID: 21300000, guid: 04bd2202010afdd4eb7ec0dd406d7876, type: 2}
   unequiptBG: {fileID: 21300000, guid: f7926edc37195ce4aa1c615555aeb704, type: 3}
@@ -673,6 +673,7 @@ Transform:
   - {fileID: 1091741926}
   - {fileID: 1226918543}
   - {fileID: 1543668493}
+  - {fileID: 163262217}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1824,7 +1825,6 @@ RectTransform:
   m_Children:
   - {fileID: 2017913010}
   - {fileID: 1767026687}
-  - {fileID: 163262217}
   m_Father: {fileID: 363143716}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
