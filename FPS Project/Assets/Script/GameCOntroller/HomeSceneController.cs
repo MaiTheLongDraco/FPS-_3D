@@ -26,6 +26,7 @@ public class HomeSceneController : MonoBehaviour
     private void SetCointTextStart()
     {
         var cointAmount = PlayerPrefs.GetInt("cointAmount");
+        // var cointAmount = FindObjectOfType<ShopController>().CoinAmount;
         coinText.text = cointAmount.ToString();
     }
     public void SetActiveSetting(bool set)

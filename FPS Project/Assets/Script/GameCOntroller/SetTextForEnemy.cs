@@ -8,9 +8,14 @@ public class SetTextForEnemy : MonoBehaviour
 {
     [SerializeField] private int totalEnmeny;
     [SerializeField] private int killedEnmeny;
+    [SerializeField] private int rewardCoin;
+    [SerializeField] private Text rewarCoinTxt;
+
     [SerializeField] private Text totalEnmenyTXT;
     [SerializeField] private Text killedEnmenyTXT;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private ShopController shop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +24,10 @@ public class SetTextForEnemy : MonoBehaviour
         SetKilledEnemy(killedEnmeny.ToString());
         SetActiveWinPanel(false);
     }
-
+    private void Awake()
+    {
+        shop = FindObjectOfType<ShopController>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,9 +47,17 @@ public class SetTextForEnemy : MonoBehaviour
         SetKilledEnemy(killedEnmeny.ToString());
         if (killedEnmeny >= totalEnmeny)
         {
-            SetActiveWinPanel(true);
+            Invoke("WinGame", 2f);
         }
     }
+
+    private void WinGame()
+    {
+        shop.AddCoint(rewardCoin);
+        SetActiveWinPanel(true);
+        rewarCoinTxt.text = rewardCoin.ToString();
+    }
+
     private void SetActiveWinPanel(bool set)
     {
         winPanel.SetActive(set);

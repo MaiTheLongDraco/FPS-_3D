@@ -35,6 +35,8 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Text buyTxt;
     [SerializeField] private List<string> listString;
 
+    public int CoinAmount { get => coinAmount; set => coinAmount = value; }
+
     // Start is called before the first frame update
     void Start()
     {

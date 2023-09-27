@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class GamePlayScene : SSController
 {
     [SerializeField] private Text winCoinTxt;
+    [SerializeField] private ShopController shopController;
+
     private new void Start()
     {
         GetCoinData();
     }
     private new void OnEnable()
     {
+        shopController = FindObjectOfType<ShopController>();
         GetCoinData();
     }
     public void LoadHomeScene()
@@ -24,7 +27,7 @@ public class GamePlayScene : SSController
     }
     private void GetCoinData()
     {
-        var coinAmount = PlayerPrefs.GetInt("coinAmount");
+        var coinAmount = shopController.CoinAmount;
         winCoinTxt.text = coinAmount.ToString();
     }
 
