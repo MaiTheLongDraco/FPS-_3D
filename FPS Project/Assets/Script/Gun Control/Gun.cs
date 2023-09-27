@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour
     }
     private void OnEnable()
     {
+        impactPrefab = GetComponentInChildren<ParticleSystem>();
         impactPrefab.Stop();
     }
     private void Update()

@@ -14,10 +14,13 @@ public class GunSwitcher : MonoBehaviour
     [SerializeField] private ShopController shopController;
     private void Start()
     {
-        shopController = FindObjectOfType<ShopController>();
         gunIndex = 0;
         GetData();
         ChangeGun();
+    }
+    private void Awake()
+    {
+        shopController = FindObjectOfType<ShopController>();
     }
     public void CurrentGunShoot()
     {

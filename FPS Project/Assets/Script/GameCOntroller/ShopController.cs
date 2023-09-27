@@ -41,10 +41,16 @@ public class ShopController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         InitListWeapon();
         SwitchGunInfo();
-        SetCoinAmountTxt(coinAmount.ToString());
+        LoadCoinFromData();
+    }
+    private void OnEnable()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        LoadCoinFromData();
     }
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         ReadJsonToData();
     }
 
@@ -53,9 +59,17 @@ public class ShopController : MonoBehaviour
     {
 
     }
+    private void LoadCoinFromData()
+    {
+        var coint = PlayerPrefs.GetInt("cointAmount");
+        coinAmount = coint;
+        SetCoinAmountTxt(coinAmount.ToString());
+    }
     public void AddCoint(int extraCoin)
     {
         coinAmount += extraCoin;
+        PlayerPrefs.SetInt("cointAmount", coinAmount);
+        PlayerPrefs.Save();
         SetCoinAmountTxt(coinAmount.ToString());
     }
     public bool IsBoughtGunContain(string key)
