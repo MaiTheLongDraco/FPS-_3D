@@ -16,12 +16,13 @@ public class Gun : MonoBehaviour
     [SerializeField] protected ParticleSystem impactPrefab;
     [SerializeField] protected RawImage _crossHair;
     [SerializeField] private UnityEvent onShoot;
+    [SerializeField] private float cutDelay;
+
     public UnityEvent OnShoot { get => onShoot; set => onShoot = value; }
     public bool IsOutOfAmmo;
     public WeaponType weaponType;
     public string[] layermask = { "Enemy", "EnemyHead" };
     private LayerMask targetLayer;
-    public Transform testLookAT;
     private void Start()
     {
         impactPrefab = GetComponentInChildren<ParticleSystem>();
@@ -31,6 +32,8 @@ public class Gun : MonoBehaviour
     private void OnEnable()
     {
         impactPrefab = GetComponentInChildren<ParticleSystem>();
+        if (impactPrefab == null)
+            return;
         impactPrefab.Stop();
     }
     private void Update()
@@ -39,9 +42,12 @@ public class Gun : MonoBehaviour
     }
     protected void Shoot()
     {
-        if (weaponType == WeaponType.MEELEE) return;
-        impactPrefab.Play();
+        // if (weaponType == WeaponType.MEELEE) return;
         OnShoot?.Invoke();
+        if (impactPrefab != null)
+        {
+            impactPrefab.Play();
+        }
         RaycastHit hit;
         var isCollide = Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, targetLayer);
         if (isCollide)
@@ -61,9 +67,22 @@ public class Gun : MonoBehaviour
             {
                 print("enemy body ++++");
                 target.SetState(target._isAttack);
-                target.TakeDamage(damage);
+                if (weaponType == WeaponType.GUN)
+                {
+                    target.TakeDamage(damage);
+                }
+                else
+                {
+                    StartCoroutine(SetDamage(target));
+                }
             }
         }
+    }
+    private IEnumerator SetDamage(Enemy enemy)
+    {
+        print("enemy get cut dame ");
+        yield return new WaitForSeconds(cutDelay);
+        enemy.TakeDamage(damage);
     }
     IEnumerator ResetCrosshairColor()
     {
@@ -85,13 +104,6 @@ public class Gun : MonoBehaviour
     public void ReloadAmmo()
     {
         this.GetComponent<AmmoSystem>().ReLoadAmmoBtn();
-    }
-    private void LookAtCenter()
-    {
-        print($"Loook at");
-        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
-        transform.DOLookAt(worldCenter, .5f);
     }
 }
 public enum WeaponType

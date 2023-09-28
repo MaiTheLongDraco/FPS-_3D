@@ -18,6 +18,8 @@ public class AmmoSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (gun.weaponType == WeaponType.MEELEE)
+            return;
         gun.OnShoot.AddListener(DecreasePerShoot);
     }
 

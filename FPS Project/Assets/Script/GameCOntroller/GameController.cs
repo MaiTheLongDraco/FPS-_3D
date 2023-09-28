@@ -20,7 +20,8 @@ public class GameController : MonoBehaviour
     }
     public void RePlay()
     {
-        SceneManager.LoadScene("GamePlay");
+        Scene active = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(active.name);
         SetActiveLosePanel(false);
     }
     public void Pause()

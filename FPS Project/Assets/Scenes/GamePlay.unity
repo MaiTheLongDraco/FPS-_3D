@@ -4359,7 +4359,7 @@ Animator:
   m_GameObject: {fileID: 670901907}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21e17cd65318d56488c111b8fc0988a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4376,27 +4376,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670901907}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe7bacaa04037ae459b8fcf45094e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
+  damage: 100
+  range: 100
   fpsCam: {fileID: 0}
-  fireRate: 0
-  timeInterval: 0
+  fireRate: 0.2
+  timeInterval: 0.2
   impactPrefab: {fileID: 0}
-  _crossHair: {fileID: 0}
+  _crossHair: {fileID: 1851255756}
   onShoot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 670901916}
+        m_TargetAssemblyTypeName: AnimationControl, Assembly-CSharp
+        m_MethodName: SetTriggerAnim
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cut
+          m_BoolArgument: 0
+        m_CallState: 2
+  cutDelay: 1.089
   IsOutOfAmmo: 0
-  weaponType: 0
+  weaponType: 1
   layermask:
   - Enemy
   - EnemyHead
-  testLookAT: {fileID: 0}
 --- !u!114 &670901913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4411,12 +4423,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPerShoot: {fileID: 543007746}
   ammoPerGun: {fileID: 791273305}
-  NumAmmoPerShoot: 0
-  ResetAmmo: 0
-  NumAmmoPerGun: 0
+  NumAmmoPerShoot: 1
+  ResetAmmo: 1
+  NumAmmoPerGun: 1
   timeToReload: 0
   gun: {fileID: 0}
   animationControl: {fileID: 0}
+--- !u!114 &670901916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670901907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f664a4d63ec14c45b68c412bff2aff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 670901911}
 --- !u!1 &687811014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,7 +5865,7 @@ MonoBehaviour:
   cameraTran: {fileID: 963194228}
   minPicht: -60
   maxPicht: 50
-  rotationSpeed: 2
+  rotationSpeed: 2.5
 --- !u!1 &871563490
 GameObject:
   m_ObjectHideFlags: 0
@@ -7890,6 +7915,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174538016}
   m_CullTransparentMesh: 1
+--- !u!1 &1199606215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8449097435849188939, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
+  m_PrefabInstance: {fileID: 8450051766173180506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199606220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199606215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8eb4fcf30bcb824f80b4a7b959ecc59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1209643603
 GameObject:
   m_ObjectHideFlags: 0
@@ -8656,6 +8698,10 @@ PrefabInstance:
     - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: m_Name
       value: Soldier_demo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: _playerTranform
@@ -10601,6 +10647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier_demo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: _playerTranform
       value: 
@@ -10749,6 +10799,10 @@ PrefabInstance:
     - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: m_Name
       value: Soldier_demo (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: _playerTranform
@@ -13560,6 +13614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier_demo
       objectReference: {fileID: 0}
+    - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: _playerTranform
       value: 
@@ -13708,7 +13766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450051765756691662, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.56
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8450051765756691662, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13766,6 +13824,12 @@ PrefabInstance:
       propertyPath: _crossHair
       value: 
       objectReference: {fileID: 1851255756}
+    - target: {fileID: 8479198905136043704, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8468944597780950837, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
+    - {fileID: 8450051767389256725, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
+    - {fileID: 8450051767389256714, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9bdfadc182421ac4a9608b27c9e1f23f, type: 3}
