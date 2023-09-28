@@ -10,10 +10,10 @@ public class Jump : MonoBehaviour
     [SerializeField] private float _jumpForce;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private CharacterController _charControl;
-    private bool _isGround;
+    [SerializeField] private bool _isGround;
     [SerializeField] private float _gravity;
     private Vector3 _velocity;
-    private bool isJump;
+    [SerializeField] private bool isJump;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,15 @@ public class Jump : MonoBehaviour
     {
         if (isJump)
         {
-            Jumping();
+            _isGround = Physics.CheckSphere(_groundCheck.position, _radius, _groundLayer);
+            if (_isGround == false)
+            {
+                isJump = false;
+            }
+            else
+            {
+                Jumping();
+            }
         }
         else
         {
@@ -35,15 +43,13 @@ public class Jump : MonoBehaviour
     }
     public void Jumping()
     {
-        ResetVelocityY();
-        _isGround = Physics.CheckSphere(_groundCheck.position, _radius, _groundLayer);
-        if (_isGround)
-        {
-            Debug.Log(_isGround + "IS grounded ??");
-            Vector3 jumpDir = new Vector3(0, _jumpForce, 0);
-            _charControl.Move(jumpDir * Time.deltaTime);
-        }
 
+        var rbVel = this.GetComponent<Rigidbody>().velocity.y;
+        Debug.Log(_isGround + "IS grounded ??" + $"rbvel {rbVel}");
+        print("tessssssssssssssssst");
+        _velocity.y = _jumpForce;
+        _charControl.Move(_velocity * Time.deltaTime);
+        ResetVelocityY();
     }
     public void JumpPress()
     {
@@ -59,7 +65,7 @@ public class Jump : MonoBehaviour
         if (_isGround && _velocity.y < 0)
         {
             isJump = false;
-            _velocity.y = -2f;
+            // _velocity.y = -2f;
         }
 
     }
@@ -70,5 +76,9 @@ public class Jump : MonoBehaviour
             return true;
         }
         else return false;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(_groundCheck.position, _radius);
     }
 }

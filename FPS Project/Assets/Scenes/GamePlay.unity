@@ -698,12 +698,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundCheck: {fileID: 1417035314}
   _radius: 0.5
-  _jumpForce: 1500
+  _jumpForce: 80
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
   _charControl: {fileID: 115760499}
+  _isGround: 0
   _gravity: -1
+  isJump: 0
 --- !u!54 &115760507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11039,10 +11041,18 @@ MonoBehaviour:
   - eventID: 3
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 115760504}
           m_TargetAssemblyTypeName: MoveByKey, Assembly-CSharp
-          m_MethodName: BackToNormalSpeed
+          m_MethodName: SpeedUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11052,13 +11062,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 2
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 115760504}
           m_TargetAssemblyTypeName: MoveByKey, Assembly-CSharp
-          m_MethodName: SpeedUp
+          m_MethodName: BackToNormalSpeed
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
