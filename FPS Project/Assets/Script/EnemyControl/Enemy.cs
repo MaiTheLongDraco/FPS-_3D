@@ -43,13 +43,14 @@ public class Enemy : MonoBehaviour
     public Transform PlayerTranform { get { return _playerTranform; } }
     public Vector3 FinalStandPos { get { return finalStandPos; } set { finalStandPos = value; } }
     public UnityEvent OnDeath;
+    [SerializeField] private float agentSpeed;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         e_NavMesh = GetComponent<NavMeshAgent>();
-        e_NavMesh.speed = 10f;
+        e_NavMesh.speed = agentSpeed;
         IsPlayerInRange = false;
         SetState(_runsate);
     }

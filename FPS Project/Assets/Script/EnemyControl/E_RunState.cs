@@ -8,7 +8,7 @@ public class E_RunState : IEnemyState
 {
     private Vector3 _roamingPos;
     private bool _isRoaming;
-    private float roamDelay = 3f;
+    private float roamDelay = 2f;
     private float roamTimer;
     public void EnterState(Enemy _ctx)
     {
@@ -58,7 +58,7 @@ public class E_RunState : IEnemyState
             ExitState(_ctx);
             _ctx.SetState(_ctx._chaseState);
         }
-       
+
     }
 
     public void UpdateState(Enemy _ctx)
@@ -67,7 +67,7 @@ public class E_RunState : IEnemyState
         //Debug.LogError(_isRoaming + "_isRoaming");
         DoRoaming(_ctx);
         CheckPlayerInAtkRange(_ctx);
-       HandlePlayerInRange(_ctx);
+        HandlePlayerInRange(_ctx);
     }
 
     private void DoRoaming(Enemy _ctx)
