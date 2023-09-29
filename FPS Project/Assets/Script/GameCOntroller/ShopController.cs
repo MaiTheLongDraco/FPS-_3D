@@ -117,12 +117,15 @@ public class ShopController : MonoBehaviour
         var minorPos1 = minorPos.transform.position;
         pickUpGuns[gunIndex].transform.position = new Vector3(minorPos1.x, minorPos1.y, pickUpGuns[gunIndex].transform.position.z);
         gunIndex++;
+        print($"gunIndex {gunIndex}");
         if (gunIndex >= pickUpGuns.Count)
         {
             gunIndex = 0;
         }
         var pos = mainPos.position;
-        pickUpGuns[gunIndex].transform.DOMove(new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z), duration);
+        // pickUpGuns[gunIndex].transform.DOMove(new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z), duration);
+        pickUpGuns[gunIndex].transform.position = new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z);
+
         SwitchGunInfo();
     }
 
@@ -137,7 +140,9 @@ public class ShopController : MonoBehaviour
             gunIndex = pickUpGuns.Count - 1;
         }
         var pos = mainPos.position;
-        pickUpGuns[gunIndex].transform.DOMove(new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z), duration);
+        // pickUpGuns[gunIndex].transform.DOMove(new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z), duration);
+        pickUpGuns[gunIndex].transform.position = new Vector3(pos.x, pos.y, pickUpGuns[gunIndex].transform.position.z);
+
         SwitchGunInfo();
     }
     private void SetTextForGunNameTxt(string set)
