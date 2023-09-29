@@ -663,9 +663,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _charControl: {fileID: 115760499}
-  moveSpeed: 20
+  moveSpeed: 0.6
+  defaultSpeed: 0.4
   isSpeedUp: 0
-  desireSpeed: 35
+  desireSpeed: 0.6
   fixedJoystick: {fileID: 612036201}
 --- !u!136 &115760505
 CapsuleCollider:
@@ -695,7 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundCheck: {fileID: 1417035314}
   _radius: 1.5
-  _jumpForce: 80
+  _jumpForce: 40
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
