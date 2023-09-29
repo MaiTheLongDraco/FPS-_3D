@@ -5,12 +5,13 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class ShopController : MonoBehaviour
 {
     public static ShopController Instance;
     [SerializeField] private List<GameObject> pickUpGuns;
-    [SerializeField] private List<Weapon> boughtGuns;
+    [SerializeField] private List<string> boughtGuns;
     [SerializeField] private int gunIndex;
     [SerializeField] private Transform mainPos;
     [SerializeField] private Transform minorPos;
@@ -42,6 +43,7 @@ public class ShopController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         InitListWeapon();
+        ReadJsonToData();
         SwitchGunInfo();
         LoadCoinFromData();
     }
@@ -53,7 +55,6 @@ public class ShopController : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        ReadJsonToData();
     }
 
     // Update is called once per frame
@@ -76,10 +77,13 @@ public class ShopController : MonoBehaviour
     }
     public bool IsBoughtGunContain(string key)
     {
-        foreach (var gun in boughtGuns)
+        foreach (var gunName in boughtGuns)
         {
-            if (gun.gunName == key)
+            if (gunName == key)
+            {
+                print($"gun {key} has in bag");
                 return true;
+            }
         }
         return false;
     }
@@ -178,16 +182,20 @@ public class ShopController : MonoBehaviour
         {
             if (weapon.gunName == gunName)
             {
-                if (boughtGuns.Contains(weapon)) return;
-                boughtGuns.Add(weapon);
+                if (boughtGuns.Contains(weapon.gunName)) return;
+                boughtGuns.Add(weapon.gunName);
                 ListData listData = new ListData(boughtGuns);
                 WriteDataToJson(listData);
             }
         }
     }
-    private void WriteDataToJson(object obj)
+    private void WriteDataToJson(ListData obj)
     {
-        print($"add gun data {Application.persistentDataPath}");
+        print($"add gun  data {Application.persistentDataPath}");
+        foreach (var gun in obj.listWeapon)
+        {
+            print($"gun data read {gun}");
+        }
         string jsonData = JsonUtility.ToJson(obj);
         File.WriteAllText(Application.persistentDataPath + $"/gunData.json", jsonData);
     }
@@ -198,10 +206,20 @@ public class ShopController : MonoBehaviour
         string jsonData = File.ReadAllText(Application.persistentDataPath + $"/gunData.json");
         var gunData = JsonUtility.FromJson<ListData>(jsonData);
         print($"gunda count {gunData.listWeapon.Count}");
-        foreach (var gun in gunData.listWeapon)
+        foreach (var gunKey in gunData.listWeapon)
         {
-            boughtGuns.Add(gun);
-            gun.gun.GetComponent<PickUpGunInFo>().gunState = GunState.EQUIPTED;
+            print($"has {gunKey}");
+            foreach (var wp in weapons)
+            {
+                print($"has {wp.gunName}");
+                if (wp.gunName == gunKey)
+                {
+                    print($"has {gunKey}");
+                    wp.gun.GetComponent<PickUpGunInFo>().gunState = GunState.EQUIPTED;
+                    boughtGuns.Add(gunKey);
+                }
+            }
+            // gun.gun.GetComponent<PickUpGunInFo>().gunState = GunState.EQUIPTED;
         }
     }
     private void InitListWeapon()
@@ -227,8 +245,8 @@ public class Weapon
 }
 public class ListData
 {
-    public List<Weapon> listWeapon;
-    public ListData(List<Weapon> listWeapon)
+    public List<string> listWeapon;
+    public ListData(List<string> listWeapon)
     {
         this.listWeapon = listWeapon;
     }

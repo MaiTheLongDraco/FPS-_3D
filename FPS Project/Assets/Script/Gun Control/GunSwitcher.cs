@@ -14,6 +14,10 @@ public class GunSwitcher : MonoBehaviour
     [SerializeField] private ShopController shopController;
     private void Start()
     {
+
+    }
+    private void OnEnable()
+    {
         gunIndex = 0;
         GetData();
         ChangeGun();
@@ -67,6 +71,7 @@ public class GunSwitcher : MonoBehaviour
         {
             if (shopController.IsBoughtGunContain(guns[i].gunName) || guns[i].gunName == "Default")
             {
+                print($"--------------{guns[i].gunName}----------------");
                 usingGun.Add(guns[i].gun);
                 // OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
             }

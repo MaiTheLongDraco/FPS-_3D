@@ -19,7 +19,7 @@ public class MoveByKey : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        fixedJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+        // fixedJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
     }
     private void OnEnable()
     {
