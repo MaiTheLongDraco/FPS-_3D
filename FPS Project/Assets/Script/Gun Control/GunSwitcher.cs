@@ -80,7 +80,8 @@ public class GunSwitcher : MonoBehaviour
 
     public void SetAimCurrentGun(bool set)
     {
-        currenGun.GetComponent<AmingSystem>().SetAim(set);
+        // print($"IS aiming null {currenGun.GetComponent<AmingSystem>() == null}");
+        CurrentGun.GetComponent<AmingSystem>().SetAim(set);
     }
     private void HandleGunIndex()
     {
