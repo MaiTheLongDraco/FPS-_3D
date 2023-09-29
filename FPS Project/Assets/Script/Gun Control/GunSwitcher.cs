@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,12 +15,12 @@ public class GunSwitcher : MonoBehaviour
     [SerializeField] private ShopController shopController;
     private void Start()
     {
-
     }
     private void OnEnable()
     {
         gunIndex = 0;
-        GetData();
+        // GetData();
+        ReadJsonToData();
         ChangeGun();
     }
     private void Awake()
@@ -64,18 +65,30 @@ public class GunSwitcher : MonoBehaviour
             }
         }
     }
-    public void GetData()
+    private bool IsListGunContainKey(string key)
     {
-        // guns[gunIndex].SetActive(true);
         for (int i = 0; i < guns.Count; i++)
         {
-            if (shopController.IsBoughtGunContain(guns[i].gunName) || guns[i].gunName == "Default")
+            if (guns[i].gunName == key)
             {
-                print($"--------------{guns[i].gunName}----------------");
-                usingGun.Add(guns[i].gun);
-                // OnchangeGun?.Invoke(guns[i].GetComponent<Gun>());
+                return true;
             }
         }
+        return false;
+    }
+    private void ReadJsonToData()
+    {
+        var filePath = Application.persistentDataPath + $"/gunData.json";
+        if (!File.Exists(filePath)) return;
+        string jsonData = File.ReadAllText(Application.persistentDataPath + $"/gunData.json");
+        var gunData = JsonUtility.FromJson<ListData>(jsonData);
+        print($"gunda count switcher{gunData.listWeapon.Count}");
+        foreach (var gunKey in gunData.listWeapon)
+        {
+            var boughtGun = guns.Find(item => item.gunName == gunKey);
+            usingGun.Add(boughtGun.gun);
+        }
+
     }
 
     public void SetAimCurrentGun(bool set)
