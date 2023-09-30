@@ -12,7 +12,7 @@ public class Jump : MonoBehaviour
     [SerializeField] private CharacterController _charControl;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _gravity;
-    private Vector3 _velocity;
+    [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool isJump;
     // Start is called before the first frame update
     void Start()
@@ -44,12 +44,12 @@ public class Jump : MonoBehaviour
     public void Jumping()
     {
 
+        ResetVelocityY();
         var rbVel = this.GetComponent<Rigidbody>().velocity.y;
         Debug.Log(_isGround + "IS grounded ??" + $"rbvel {rbVel}");
         print("tessssssssssssssssst");
         _velocity.y = _jumpForce;
         _charControl.Move(_velocity * Time.deltaTime);
-        ResetVelocityY();
     }
     public void JumpPress()
     {
@@ -65,7 +65,8 @@ public class Jump : MonoBehaviour
         if (_isGround && _velocity.y < 0)
         {
             isJump = false;
-            // _velocity.y = -2f;
+            _velocity.y = -2f;
+            print($" Y velocity {_velocity.y}");
         }
 
     }
