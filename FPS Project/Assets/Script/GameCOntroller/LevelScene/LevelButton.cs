@@ -21,6 +21,10 @@ public class LevelButton : MonoBehaviour
     {
         return key;
     }
+    public void SetKey(int set)
+    {
+        key = set;
+    }
     public void Test()
     {
         print($"key {key}");

@@ -9,6 +9,8 @@ public class LevelControl : MonoBehaviour
 {
     [SerializeField] private List<Button> _levelBtn;
     [SerializeField] private int _startNumber;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +27,10 @@ public class LevelControl : MonoBehaviour
             if (i == 0)
             {
                 SetBtnText(_levelBtn[i], setNumber.ToString());
+                SetButtonKey(_levelBtn[i], setNumber); ;
             }
             SetBtnText(_levelBtn[i], setNumber.ToString());
+            SetButtonKey(_levelBtn[i], setNumber); ;
             setNumber++;
         }
     }
@@ -34,4 +38,9 @@ public class LevelControl : MonoBehaviour
     {
         button.GetComponentInChildren<Text>().text = levelNumber;
     }
+    private void SetButtonKey(Button button, int key)
+    {
+        button.GetComponent<LevelButton>().SetKey(key);
+    }
+
 }
