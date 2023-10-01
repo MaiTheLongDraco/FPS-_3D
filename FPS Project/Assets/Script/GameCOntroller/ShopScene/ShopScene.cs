@@ -9,4 +9,5 @@ public class ShopScene : SSController
     {
         SSSceneManager.Instance.Screen("HomeScene");
     }
+
 }

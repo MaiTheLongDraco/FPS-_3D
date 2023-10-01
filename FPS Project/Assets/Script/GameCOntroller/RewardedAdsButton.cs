@@ -5,8 +5,12 @@ using UnityEngine.Advertisements;
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     public static RewardedAdsButton Instance;
-    [SerializeField] Button _showAdButton;
     [SerializeField] Button _addCoinBtn;
+    [SerializeField] Text _textToChange;
+
+    [SerializeField] GameObject _adsUI;
+    [SerializeField] GameObject _congratulationUI;
+
 
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
@@ -27,7 +31,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     private void Start()
     {
         shopController = FindObjectOfType<ShopController>();
-        _showAdButton.onClick.AddListener(ShowAd);
         _addCoinBtn.onClick.AddListener(ShowAd);
     }
 
@@ -49,7 +52,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             // Configure the button to call the ShowAd() method when clicked:
 
             // Enable the button for users to click:
-            _showAdButton.interactable = true;
             _addCoinBtn.interactable = true;
         }
     }
@@ -66,7 +68,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         print("Show ad ----");
         // Disable the button:
-        _showAdButton.interactable = false;
         _addCoinBtn.interactable = false;
         // Then show the ad:
         Advertisement.Show(_adUnitId, this);
@@ -78,7 +79,20 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
-            shopController.AddCoint(25);
+            _adsUI.SetActive(false);
+            _congratulationUI.SetActive(true);
+            if (shopController == null)
+            {
+                var coin = PlayerPrefs.GetInt("cointAmount");
+                coin += 50;
+                PlayerPrefs.SetInt("cointAmount", coin);
+                _textToChange.text = coin.ToString();
+            }
+            else
+            {
+                shopController.AddCoint(50);
+            }
+
             // Grant a reward.
         }
     }
@@ -102,7 +116,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     void OnDestroy()
     {
         // Clean up the button listeners:
-        _showAdButton.onClick.RemoveAllListeners();
         _addCoinBtn.onClick.RemoveAllListeners();
     }
 }

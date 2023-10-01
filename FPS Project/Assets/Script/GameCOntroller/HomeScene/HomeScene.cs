@@ -12,4 +12,8 @@ public class HomeScene : SSController
     {
         SSSceneManager.Instance.Screen("GamePlay");
     }
+    public void LoadLevelScene()
+    {
+        SSSceneManager.Instance.Screen("LevelScene");
+    }
 }

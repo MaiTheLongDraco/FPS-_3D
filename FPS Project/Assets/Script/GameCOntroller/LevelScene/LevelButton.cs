@@ -9,6 +9,7 @@ public class LevelButton : MonoBehaviour
 {
     [SerializeField] private int key;
     [SerializeField] private Button levelButton;
+    [SerializeField] private GameObject levelUI;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +26,9 @@ public class LevelButton : MonoBehaviour
     {
         key = set;
     }
-    public void Test()
-    {
-        print($"key {key}");
-    }
     public void LoadScene()
     {
+        levelUI.gameObject.SetActive(false);
         SceneManager.LoadScene($"Level{key}");
     }
 

@@ -7,16 +7,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject pauseGamePanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject Shop;
+    [SerializeField] private GameObject _adsUI;
+    [SerializeField] private GameObject _congratulationUI;
+
     [SerializeField] private RewardedAdsButton rewardedAdsButton;
-    // Start is called before the first frame update
-    void Start()
+    public void ShowAdsUI(bool set)
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _adsUI.SetActive(set);
     }
     public void RePlay()
     {
@@ -42,6 +39,10 @@ public class GameController : MonoBehaviour
     {
         losePanel.SetActive(isActive);
     }
+    public void SetActiveCongratulationUI(bool set)
+    {
+        _congratulationUI.SetActive(set);
+    }
     public void SetActiveShop(bool set)
     {
         Shop.SetActive(set);
@@ -58,4 +59,5 @@ public class GameController : MonoBehaviour
     {
         rewardedAdsButton.LoadAd();
     }
+
 }
