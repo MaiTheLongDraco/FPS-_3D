@@ -4536,6 +4536,8 @@ MonoBehaviour:
   pauseGamePanel: {fileID: 2109391780}
   losePanel: {fileID: 1326919213}
   Shop: {fileID: 0}
+  _adsUI: {fileID: 0}
+  _congratulationUI: {fileID: 0}
   rewardedAdsButton: {fileID: 0}
 --- !u!1 &598259992
 GameObject:
@@ -5014,12 +5016,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: -0.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1653672134}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &715284250
 GameObject:
@@ -11704,8 +11706,9 @@ Transform:
   - {fileID: 115760503}
   - {fileID: 715284251}
   - {fileID: 1562557797}
+  - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1653672135
 MonoBehaviour:
@@ -11721,6 +11724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCoinTxt: {fileID: 816185184}
   shopController: {fileID: 0}
+  levelData: {fileID: 0}
+  levelText: {fileID: 0}
 --- !u!114 &1653672136
 MonoBehaviour:
   m_ObjectHideFlags: 0

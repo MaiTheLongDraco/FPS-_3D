@@ -32,7 +32,9 @@ public class LevelButton : MonoBehaviour
     {
         levelData.SetSelectLevel(key);
         levelUI.gameObject.SetActive(false);
-        SceneManager.LoadScene($"Level{key}");
+        // SceneManager.LoadScene($"Level{key}");
+        SSSceneManager.Instance.Screen($"Level{key}");
+        // SceneManager.LoadScene($"GamePlay");
     }
 
 }

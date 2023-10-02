@@ -13,6 +13,8 @@ public class Jump : MonoBehaviour
     [SerializeField] private bool _isGround;
     [SerializeField] private float _gravity;
     [SerializeField] private Vector3 _velocity;
+    [SerializeField] private float _targetYVel;
+
     [SerializeField] private bool isJump;
     // Start is called before the first frame update
     void Start()
@@ -23,9 +25,9 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ResetVelocityY();
         if (isJump)
         {
-            _isGround = Physics.CheckSphere(_groundCheck.position, _radius, _groundLayer);
             if (_isGround == false)
             {
                 isJump = false;
@@ -37,14 +39,14 @@ public class Jump : MonoBehaviour
         }
         else
         {
+            // if (_isGround)
+            //     return;
             _velocity.y += _gravity;
             _charControl.Move(_velocity * Time.deltaTime);
         }
     }
     public void Jumping()
     {
-
-        ResetVelocityY();
         var rbVel = this.GetComponent<Rigidbody>().velocity.y;
         Debug.Log(_isGround + "IS grounded ??" + $"rbvel {rbVel}");
         print("tessssssssssssssssst");
@@ -62,11 +64,10 @@ public class Jump : MonoBehaviour
 
     private void ResetVelocityY()
     {
+        _isGround = Physics.CheckSphere(_groundCheck.position, _radius, _groundLayer);
         if (_isGround && _velocity.y < 0)
         {
-            isJump = false;
-            _velocity.y = -2f;
-            print($" Y velocity {_velocity.y}");
+            _velocity.y = _targetYVel;
         }
 
     }
