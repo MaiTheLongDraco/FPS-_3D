@@ -9,7 +9,7 @@ public class E_ChaseState : IEnemyState
     {
         _ctx.Animator.SetBool("isRunning", true);
         //_ctx.IsPlayerInRange= true;
-      //  _ctx.SetIsPlayerOnRange(true);
+        //  _ctx.SetIsPlayerOnRange(true);
         Debug.Log("enter chase state");
         _ctx.States = Enemy.State.CHASE_STATE;
     }
@@ -23,14 +23,14 @@ public class E_ChaseState : IEnemyState
     public void UpdateState(Enemy _ctx)
     {
         var player = _ctx.PlayerTranform.position;
-        var dir=player-_ctx.transform.position;
-        _ctx.FinalStandPos=player-dir;
+        var dir = player - _ctx.transform.position;
+        _ctx.FinalStandPos = player - dir;
         Debug.Log("update chase state");
-        if(_ctx.IsPlayerInRange)
+        if (_ctx.IsPlayerInRange)
         {
-       // Debug.Log(_ctx.IsPlayerInRange + "_ctx.IsPlayerInRange inside");
-        _ctx.NavMesh.SetDestination(player);
+            _ctx.NavMesh.SetDestination(player);
             HandlPlayerInATK(_ctx);
+            // Debug.Log(_ctx.IsPlayerInRange + "_ctx.IsPlayerInRange inside");
         }
         else
         {
@@ -39,9 +39,9 @@ public class E_ChaseState : IEnemyState
         }
     }
     private void HandlPlayerInATK(Enemy _ctx)
-    { 
+    {
         var playerTranform = _ctx.PlayerTranform.position;
-        if(Vector3.Distance(_ctx.transform.position, playerTranform)<=_ctx.DetectRange/2)
+        if (Vector3.Distance(_ctx.transform.position, playerTranform) <= _ctx.DetectRange / 8)
         {
             _ctx.SetState(_ctx._attackState);
         }

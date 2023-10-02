@@ -18,26 +18,28 @@ public class EnemyGun : MonoBehaviour
         HandleForBullettrai(_player);
         RaycastHit hit;
         var dir = _player.transform.position - transform.position;
-        var isHitPlayer = Physics.Raycast(transform.position, dir,out hit, _shootRange);
-        if(isHitPlayer)
+        var isHitPlayer = Physics.Raycast(transform.position, dir, out hit, _shootRange);
+        if (isHitPlayer)
         {
+
+
             var player = hit.transform.GetComponent<PlayerHeath>();
-            if(player)
+            if (player)
             {
                 player.TakeDamage(_damage);
-                //StartCoroutine(player.SplashScreenHandle());
+                StartCoroutine(player.SplashScreenHandle());
             }
         }
     }
     public void DelayShooting()
     {
-        var player =_player.gameObject.GetComponent<PlayerHeath>();
+        var player = _player.gameObject.GetComponent<PlayerHeath>();
         E_shootInterval -= Time.deltaTime;
-     //   StartCoroutine(player.SplashScreenHandle());
+        //   StartCoroutine(player.SplashScreenHandle());
 
         var EnemyParent = GetComponentInParent<Enemy>();
         bool isAtkState = EnemyParent.States == Enemy.State.ATTACK_STATE;
-        if(isAtkState&& E_shootInterval<=0)
+        if (isAtkState && E_shootInterval <= 0)
         {
             Debug.LogAssertion(E_shootInterval + "E_shootInterval");
             Shoot();
@@ -54,7 +56,7 @@ public class EnemyGun : MonoBehaviour
     }
     private void HandlePLayEffect()
     {
-        if(E_shootInterval<=0)
+        if (E_shootInterval <= 0)
         {
             impactPrefab.Play();
         }
@@ -67,16 +69,16 @@ public class EnemyGun : MonoBehaviour
     private void HandleForBullettrai(Transform _playerTranform)
     {
         var trail = CreateBulletTrail().gameObject;
-        var _rb=trail.GetComponent<Rigidbody>();
+        var _rb = trail.GetComponent<Rigidbody>();
         var direction = _playerTranform.position - transform.position;
-      //  trail.transform.position = Vector3.MoveTowards(trail.transform.position, _playerTranform.position,0.1f);
-      _rb.AddForce(direction* _bulletSpeed);
+        //  trail.transform.position = Vector3.MoveTowards(trail.transform.position, _playerTranform.position,0.1f);
+        _rb.AddForce(direction * _bulletSpeed);
         Destroy(trail, max_shootInterval);
     }
     private TrailRenderer CreateBulletTrail()
     {
         var trailToGet = Instantiate(_bulletTrail, transform.position, transform.rotation);
-        var trail=trailToGet.GetComponent<TrailRenderer>();
+        var trail = trailToGet.GetComponent<TrailRenderer>();
         return trail;
-    }    
+    }
 }

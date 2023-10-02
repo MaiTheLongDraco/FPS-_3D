@@ -10927,7 +10927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _shootRange: 50
+  _shootRange: 300
   _damage: 10
   E_shootInterval: 0
   max_shootInterval: 3
@@ -11028,7 +11028,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  agentSpeed: 200
+  agentSpeed: 30
 --- !u!195 &7861452771533295014
 NavMeshAgent:
   m_ObjectHideFlags: 0

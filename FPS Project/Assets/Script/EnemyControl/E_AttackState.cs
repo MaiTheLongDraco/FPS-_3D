@@ -14,11 +14,11 @@ public class E_AttackState : IEnemyState
 
     public void ExitState(Enemy _ctx)
     {
-       var gun= _ctx.GetComponentInChildren<EnemyGun>();
+        var gun = _ctx.GetComponentInChildren<EnemyGun>();
         _ctx.Animator.SetBool("isShooting", false);
         if (gun)
-        gun.impactPrefab.Stop();
-        Debug.Log("enter exit atk state");
+            gun.impactPrefab.Stop();
+        Debug.Log(" exit atk state----");
     }
 
 
@@ -26,14 +26,30 @@ public class E_AttackState : IEnemyState
     {
         var gun = _ctx.GetComponentInChildren<EnemyGun>();
         var player = _ctx.PlayerTranform.position;
-        Debug.Log(_ctx.IsPlayerInRange+ "_ctx.IsPlayerInRange");
-        if (gun&&_ctx.IsPlayerInRange)
+        Debug.Log(_ctx.IsPlayerInRange + "_ctx.IsPlayerInRange");
+        if (gun && _ctx.IsPlayerInRange)
         {
-            gun.DelayShooting();
-            _ctx.transform.LookAt(player);
+            RaycastHit hit;
+            var dir = _ctx.PlayerTranform.transform.position - _ctx.transform.position;
+            var isHitObject = Physics.Raycast(_ctx.transform.position, dir, out hit, 300);
+            if (isHitObject)
+            {
+                var notHitRightObject = hit.transform.gameObject.layer != LayerMask.NameToLayer("Player");
+                Debug.Log($"notHitRightObject---- {notHitRightObject}");
+                if (notHitRightObject)
+                {
+                    ExitState(_ctx);
+                    _ctx.SetState(_ctx._chaseState);
+                }
+                else
+                {
+                    gun.DelayShooting();
+                    _ctx.transform.LookAt(player);
+                }
+            }
             if (Vector3.Distance(_ctx.transform.position, player) > _ctx.DetectRange) _ctx.IsPlayerInRange = false;
         }
-        if(!_ctx.IsPlayerInRange)
+        if (!_ctx.IsPlayerInRange)
         {
             ExitState(_ctx);
             _ctx.SetState(_ctx._runsate);
