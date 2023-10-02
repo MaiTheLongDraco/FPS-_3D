@@ -7,15 +7,23 @@ public class GamePlayScene : SSController
 {
     [SerializeField] private Text winCoinTxt;
     [SerializeField] private ShopController shopController;
+    [SerializeField]
+    private LevelData levelData;
+    [SerializeField] private Text levelText;
 
     private new void Start()
     {
         GetCoinData();
+        levelData = FindObjectOfType<LevelData>();
+        SetLevelTxt(levelData.GetSelectedLevel().ToString());
+        // SetLevelTxt(LevelData.selectedLevel.ToString());
     }
     private new void OnEnable()
     {
         shopController = FindObjectOfType<ShopController>();
         GetCoinData();
+        levelData = FindObjectOfType<LevelData>();
+        SetLevelTxt(levelData.GetSelectedLevel().ToString());
     }
     public void LoadHomeScene()
     {
@@ -29,6 +37,10 @@ public class GamePlayScene : SSController
     {
         var coinAmount = shopController.CoinAmount;
         winCoinTxt.text = coinAmount.ToString();
+    }
+    private void SetLevelTxt(string set)
+    {
+        levelText.text = set;
     }
 
 }

@@ -4536,6 +4536,8 @@ MonoBehaviour:
   pauseGamePanel: {fileID: 2109391780}
   losePanel: {fileID: 1326919213}
   Shop: {fileID: 0}
+  _adsUI: {fileID: 0}
+  _congratulationUI: {fileID: 0}
   rewardedAdsButton: {fileID: 0}
 --- !u!1 &598259992
 GameObject:
@@ -11679,7 +11681,7 @@ GameObject:
   - component: {fileID: 1653672136}
   - component: {fileID: 1653672135}
   m_Layer: 0
-  m_Name: GamePlay
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11721,6 +11723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCoinTxt: {fileID: 816185184}
   shopController: {fileID: 0}
+  levelData: {fileID: 0}
+  levelText: {fileID: 818097111}
 --- !u!114 &1653672136
 MonoBehaviour:
   m_ObjectHideFlags: 0

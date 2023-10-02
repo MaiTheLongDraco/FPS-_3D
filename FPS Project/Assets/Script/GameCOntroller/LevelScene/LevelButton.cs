@@ -10,11 +10,13 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private int key;
     [SerializeField] private Button levelButton;
     [SerializeField] private GameObject levelUI;
+    [SerializeField] private LevelData levelData;
 
     // Start is called before the first frame update
     void Start()
     {
         levelButton = GetComponent<Button>();
+        levelData = FindObjectOfType<LevelData>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class LevelButton : MonoBehaviour
     }
     public void LoadScene()
     {
+        levelData.SetSelectLevel(key);
         levelUI.gameObject.SetActive(false);
         SceneManager.LoadScene($"Level{key}");
     }
