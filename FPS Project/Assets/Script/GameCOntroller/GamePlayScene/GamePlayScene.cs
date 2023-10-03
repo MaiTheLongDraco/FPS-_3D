@@ -10,6 +10,10 @@ public class GamePlayScene : SSController
     [SerializeField]
     private LevelData levelData;
     [SerializeField] private Text levelText;
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private AudioSource _bgMusic;
+    [SerializeField] private float musicFadeSpeed;
+
 
     private new void Start()
     {
@@ -21,6 +25,8 @@ public class GamePlayScene : SSController
     private new void OnEnable()
     {
         shopController = FindObjectOfType<ShopController>();
+        soundManager = FindObjectOfType<SoundManager>();
+        _bgMusic = soundManager.GetMusicSource();
         GetCoinData();
         levelData = FindObjectOfType<LevelData>();
         SetLevelTxt(levelData.GetSelectedLevel().ToString());
@@ -50,9 +56,18 @@ public class GamePlayScene : SSController
             winCoinTxt.text = coinAmount.ToString();
         }
     }
+    private void Update()
+    {
+        MakeGroundMusicFade();
+    }
     private void SetLevelTxt(string set)
     {
         levelText.text = set;
     }
-
+    private void MakeGroundMusicFade()
+    {
+        if (_bgMusic.volume <= 0)
+            return;
+        _bgMusic.volume -= musicFadeSpeed * Time.deltaTime;
+    }
 }
