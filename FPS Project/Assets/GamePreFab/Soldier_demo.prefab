@@ -10946,6 +10946,7 @@ GameObject:
   - component: {fileID: 7861452771533295016}
   - component: {fileID: 7861452771533295018}
   - component: {fileID: 7861452771533295014}
+  - component: {fileID: 1199272142}
   m_Layer: 8
   m_Name: Soldier_demo
   m_TagString: Enemy
@@ -11051,6 +11052,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 2
+--- !u!65 &1199272142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861452771533295017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5043048, z: 1}
+  m_Center: {x: 0, y: 1.0873652, z: 0}
 --- !u!1 &8181588348658411920
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,14 @@ public class Jump : MonoBehaviour
     {
 
     }
+    private void SetGravityWithDevice()
+    {
+#if UNITY_EDITOR
+        _gravity = 0.3f;
+#else
+_gravity=1.3f;
+#endif
+    }
 
     // Update is called once per frame
     void Update()
@@ -53,6 +61,14 @@ public class Jump : MonoBehaviour
         _velocity.y = _jumpForce;
         _charControl.Move(_velocity * Time.deltaTime);
     }
+    public float GetGravity()
+    {
+        return _gravity;
+    }
+    public void SetGravity(float set)
+    {
+        _gravity = set;
+    }
     public void JumpPress()
     {
         isJump = true;
@@ -70,6 +86,14 @@ public class Jump : MonoBehaviour
             _velocity.y = _targetYVel;
         }
 
+    }
+    public float GetJumpForce()
+    {
+        return _jumpForce;
+    }
+    public void SetJumpForce(float set)
+    {
+        _jumpForce = set;
     }
     private bool CheckInput()
     {

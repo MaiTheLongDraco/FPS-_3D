@@ -20,4 +20,8 @@ public class RotateByDrag : MonoBehaviour, IDragHandler
         Debug.Log($" rotationX {rotationX}");
         cameraTran.transform.localRotation = Quaternion.Euler(-rotationX, 0, 0);
     }
+    public void SetRotationSpeed(float set)
+    {
+        rotationSpeed = set;
+    }
 }

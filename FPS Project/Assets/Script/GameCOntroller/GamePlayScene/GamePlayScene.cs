@@ -33,10 +33,22 @@ public class GamePlayScene : SSController
     {
         SSSceneManager.Instance.Screen("ShopScene");
     }
+    public void LoadTestScene()
+    {
+        SSSceneManager.Instance.Screen("TestScene");
+    }
     private void GetCoinData()
     {
-        var coinAmount = shopController.CoinAmount;
-        winCoinTxt.text = coinAmount.ToString();
+        if (shopController)
+        {
+            var coinAmount = shopController.CoinAmount;
+            winCoinTxt.text = coinAmount.ToString();
+        }
+        else
+        {
+            var coinAmount = PlayerPrefs.GetInt("cointAmount");
+            winCoinTxt.text = coinAmount.ToString();
+        }
     }
     private void SetLevelTxt(string set)
     {

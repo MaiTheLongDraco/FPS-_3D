@@ -53,7 +53,17 @@ public class SetTextForEnemy : MonoBehaviour
 
     private void WinGame()
     {
-        shop.AddCoint(rewardCoin);
+        if (shop)
+        {
+            shop.AddCoint(rewardCoin);
+        }
+        else
+        {
+            var currentCoin = PlayerPrefs.GetInt("cointAmount");
+            currentCoin += rewardCoin;
+            PlayerPrefs.SetInt("cointAmount", currentCoin);
+            PlayerPrefs.Save();
+        }
         SetActiveWinPanel(true);
         rewarCoinTxt.text = rewardCoin.ToString();
     }

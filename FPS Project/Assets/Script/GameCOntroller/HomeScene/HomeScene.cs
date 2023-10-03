@@ -16,4 +16,8 @@ public class HomeScene : SSController
     {
         SSSceneManager.Instance.Screen("LevelScene");
     }
+    public void LoadTestScene()
+    {
+        SSSceneManager.Instance.Screen("TestScene");
+    }
 }
