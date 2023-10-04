@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HomeScene : SSController
@@ -7,16 +8,15 @@ public class HomeScene : SSController
     [SerializeField] private bool isFpsChange;
     [SerializeField] private Sprite defaulFps;
     [SerializeField] private Sprite highFps;
+    string[] exceptList = { "HomeScene", "ShopScene" };
     public void LoadShopScene()
     {
+
         SSSceneManager.Instance.Screen("ShopScene");
-    }
-    public void LoadGamePlayScene()
-    {
-        SSSceneManager.Instance.Screen("GamePlay");
     }
     public void LoadLevelScene()
     {
+        SSSceneManager.Instance.DestroyInactiveScenes(exceptList);
         SSSceneManager.Instance.Screen("LevelScene");
     }
     public void LoadTestScene()

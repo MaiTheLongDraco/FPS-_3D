@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GamePlayScene : SSController
@@ -22,6 +23,7 @@ public class GamePlayScene : SSController
         SetLevelTxt(levelData.GetSelectedLevel().ToString());
         // SetLevelTxt(LevelData.selectedLevel.ToString());
     }
+
     private new void OnEnable()
     {
         shopController = FindObjectOfType<ShopController>();
@@ -33,6 +35,8 @@ public class GamePlayScene : SSController
     }
     public void LoadHomeScene()
     {
+        Time.timeScale = 1;
+        SSSceneManager.Instance.DestroyScenesFrom("Level1");
         SSSceneManager.Instance.Screen("HomeScene");
     }
     public void LoadShopScene()

@@ -21,6 +21,14 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(active.name);
         SetActiveLosePanel(false);
     }
+    public void ReTry()
+    {
+        SetActivePauseGamePanel(false);
+        Time.timeScale = 1;
+        Scene active = SceneManager.GetActiveScene();
+        SSSceneManager.Instance.Reset(active);
+        // SSSceneManager.Instance.Screen(active.name);
+    }
     public void Pause()
     {
         Time.timeScale = 0;
