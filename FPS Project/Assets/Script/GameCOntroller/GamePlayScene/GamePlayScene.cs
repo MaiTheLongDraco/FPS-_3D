@@ -50,6 +50,9 @@ public class GamePlayScene : SSController
     public void LoadNextLevel()
     {
         SSSceneManager.Instance.Screen($"Level{levelData.GetSelectedLevel() + 1}");
+        var nextLevel = levelData.GetSelectedLevel() + 1;
+        levelData.SetSelectLevel(nextLevel);
+        SetLevelTxt(levelData.GetSelectedLevel().ToString());
     }
     private void GetCoinData()
     {
