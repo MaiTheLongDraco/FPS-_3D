@@ -47,6 +47,10 @@ public class GamePlayScene : SSController
     {
         SSSceneManager.Instance.Screen("TestScene");
     }
+    public void LoadNextLevel()
+    {
+        SSSceneManager.Instance.Screen($"Level{levelData.GetSelectedLevel() + 1}");
+    }
     private void GetCoinData()
     {
         if (shopController)

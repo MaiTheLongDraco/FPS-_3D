@@ -1895,6 +1895,17 @@ Transform:
   m_Father: {fileID: 2044872242}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069113087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 84554316877909835, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+  m_PrefabInstance: {fileID: 5209675317447697139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea74f59bcafcbb4580909080f525089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1075234755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,6 +4253,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1096734464}
     m_Modifications:
+    - target: {fileID: 84554316877909835, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: levelUI
+      value: 
+      objectReference: {fileID: 871801900}
     - target: {fileID: 411342290355236787, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
       propertyPath: m_Name
       value: GridViewContain
@@ -4549,6 +4564,34 @@ PrefabInstance:
     - target: {fileID: 5616193158708313174, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1069113087}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467703462990073885, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7226522093470428857, guid: 6e59484b0ec0c8848ad55d48193a6745, type: 3}
       propertyPath: levelUI

@@ -8,6 +8,8 @@ public class Setting : MonoBehaviour
     [SerializeField] private GameObject creditUI;
     [SerializeField] private GameObject settingUI;
     [SerializeField] private GameObject ratingUI;
+    [SerializeField] private GameObject quitGameConfirm;
+
     [SerializeField] private RectTransform ratingRect;
     [SerializeField] private float random;
     [SerializeField] private float transitionPointDown;
@@ -67,5 +69,13 @@ public class Setting : MonoBehaviour
     public void SetActiveSetting(bool set)
     {
         settingUI.SetActive(set);
+    }
+    public void SetActiveQuitConfirm(bool set)
+    {
+        quitGameConfirm.SetActive(set);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
