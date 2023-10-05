@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +20,11 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        LoadMusicAndSoundState();
+    }
+    private void OnEnable()
+    {
+        LoadMusicAndSoundState();
     }
     private void Awake()
     {
@@ -45,12 +52,25 @@ public class SoundManager : MonoBehaviour
     public void ToggleOnOffMusic()
     {
         _musicSource.mute = !_musicSource.mute;
+        PlayerPrefs.SetInt("musicState", Convert.ToInt32(_musicSource.mute));
+        PlayerPrefs.Save();
         HandlBgAndTxt(musicBtn, _musicSource.mute);
         print($"musics mute++++ {_musicSource.mute}");
+    }
+    private void LoadMusicAndSoundState()
+    {
+        var music = PlayerPrefs.GetInt("musicState") == 1 ? true : false;
+        var sound = PlayerPrefs.GetInt("soundState") == 1 ? true : false;
+        _musicSource.mute = music;
+        _SoundSource.mute = sound;
+        HandlBgAndTxt(musicBtn, music);
+        HandlBgAndTxt(soundBtn, sound);
     }
     public void ToggleOnOffSound()
     {
         _SoundSource.mute = !_SoundSource.mute;
+        PlayerPrefs.SetInt("soundState", Convert.ToInt32(_SoundSource.mute));
+        PlayerPrefs.Save();
         HandlBgAndTxt(soundBtn, _SoundSource.mute);
         print($"sound mute++++ {_SoundSource.mute}");
     }
