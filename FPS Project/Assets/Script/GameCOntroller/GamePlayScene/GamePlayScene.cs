@@ -43,6 +43,10 @@ public class GamePlayScene : SSController
     {
         SSSceneManager.Instance.Screen("ShopScene");
     }
+    public int GetLevelDataKey()
+    {
+        return levelData.GetSelectedLevel();
+    }
     public void LoadTestScene()
     {
         SSSceneManager.Instance.Screen("TestScene");

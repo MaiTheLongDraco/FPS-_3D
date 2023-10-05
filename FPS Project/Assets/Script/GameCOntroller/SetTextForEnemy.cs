@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,9 @@ public class SetTextForEnemy : MonoBehaviour
     [SerializeField] private Text killedEnmenyTXT;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private ShopController shop;
+    [SerializeField] private LevelData levelData;
+    [SerializeField] private GamePlayScene gamePlayScene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +28,14 @@ public class SetTextForEnemy : MonoBehaviour
         SetKilledEnemy(killedEnmeny.ToString());
         SetActiveWinPanel(false);
     }
+    private void OnEnable()
+    {
+        levelData = FindObjectOfType<LevelData>();
+    }
     private void Awake()
     {
         shop = FindObjectOfType<ShopController>();
+        gamePlayScene = FindObjectOfType<GamePlayScene>();
     }
     // Update is called once per frame
     void Update()
@@ -47,8 +56,19 @@ public class SetTextForEnemy : MonoBehaviour
         SetKilledEnemy(killedEnmeny.ToString());
         if (killedEnmeny >= totalEnmeny)
         {
+            SetLevelData();
             Invoke("WinGame", 2f);
         }
+    }
+
+    private void SetLevelData()
+    {
+        levelData.SetButtonStateWithKey(gamePlayScene
+                    .GetLevelDataKey(), ButtonState.UNLOCKED);
+        levelData.AddKeyToActiveBtn(levelData.selectedLevel);
+        LevelJsonData levelJsonData = new LevelJsonData(levelData.GetLevelKey(), levelData.selectedLevel + 1);
+        var json = JsonUtility.ToJson(levelJsonData);
+        File.WriteAllText(Application.persistentDataPath + $"/levelData.json", json);
     }
 
     private void WinGame()

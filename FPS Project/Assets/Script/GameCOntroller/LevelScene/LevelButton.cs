@@ -6,8 +6,11 @@ public class LevelButton : MonoBehaviour
 {
     [SerializeField] private int key;
     [SerializeField] private Button levelButton;
+    [SerializeField] private Image BgIMG;
+    [SerializeField] private Image lockIcon;
     [SerializeField] private GameObject levelUI;
     [SerializeField] private LevelData levelData;
+    [SerializeField] public ButtonState buttonState;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,10 @@ public class LevelButton : MonoBehaviour
     {
         key = set;
     }
+    public void SetButtonState(ButtonState newState)
+    {
+        buttonState = newState;
+    }
     public void LoadScene()
     {
         levelData.SetSelectLevel(key);
@@ -33,5 +40,19 @@ public class LevelButton : MonoBehaviour
         SSSceneManager.Instance.Screen($"Level{key}");
         // SceneManager.LoadScene($"GamePlay");
     }
+    public void ChangeBGButtoon(Sprite newBg)
+    {
+        BgIMG.sprite = newBg;
+    }
+    public void ChangeLockIcon(Sprite newBg = null)
+    {
+        lockIcon.sprite = newBg;
+    }
 
+}
+public enum ButtonState
+{
+    LOCK,
+    UNLOCKED,
+    CURRENT
 }
