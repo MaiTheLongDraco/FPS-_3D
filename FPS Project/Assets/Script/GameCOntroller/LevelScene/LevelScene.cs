@@ -25,7 +25,15 @@ public class LevelScene : SSController
         ReadLevelJsonData();
         ReSetUpButton();
     }
-
+    private new void Awake()
+    {
+        levelData = FindObjectOfType<LevelData>();
+        LoadCoinFromData();
+        listBtn = GetComponentsInChildren<LevelButton>().ToList();
+        levelData.SetListBtn(listBtn);
+        ReadLevelJsonData();
+        ReSetUpButton();
+    }
     private new void OnDisable()
     {
         levelData.SetListBtn(listBtn);
@@ -49,12 +57,10 @@ public class LevelScene : SSController
             }
         }
     }
-
     public void LoadHomeScene()
     {
         SSSceneManager.Instance.Screen("HomeScene");
     }
-
     private void LoadCoinFromData()
     {
         var coint = PlayerPrefs.GetInt("cointAmount");

@@ -15,13 +15,17 @@ public class GunSwitcher : MonoBehaviour
     [SerializeField] private ShopController shopController;
     private void Start()
     {
-    }
-    private void OnEnable()
-    {
         gunIndex = 0;
         // GetData();
         ReadJsonToData();
         ChangeGun();
+    }
+    private void OnEnable()
+    {
+        // gunIndex = 0;
+        // // GetData();
+        // ReadJsonToData();
+        // ChangeGun();
     }
     private void Awake()
     {
@@ -88,7 +92,15 @@ public class GunSwitcher : MonoBehaviour
             var boughtGun = guns.Find(item => item.gunName == gunKey);
             usingGun.Add(boughtGun.gun);
         }
-
+        foreach (var gun in guns)
+        {
+            if (gun.gunName == "Default")
+            {
+                if (usingGun.Contains(gun.gun))
+                    break;
+                usingGun.Add(gun.gun);
+            }
+        }
     }
 
     public void SetAimCurrentGun(bool set)

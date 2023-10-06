@@ -36,6 +36,7 @@ public class GamePlayScene : SSController
     public void LoadHomeScene()
     {
         Time.timeScale = 1;
+        _bgMusic.volume = 1;
         SSSceneManager.Instance.DestroyScenesFrom("Level1");
         SSSceneManager.Instance.Screen("HomeScene");
     }
