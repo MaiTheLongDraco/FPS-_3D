@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private RewardedAdsButton rewardedAdsButton;
     public void ShowAdsUI(bool set)
     {
+        if (Camera.main == null) return;
         if (set)
         {
             Camera.main.cullingMask = adsCullingMask;
@@ -61,6 +62,14 @@ public class GameController : MonoBehaviour
     }
     public void SetActiveCongratulationUI(bool set)
     {
+        if (set)
+        {
+            Camera.main.cullingMask = adsCullingMask;
+        }
+        else
+        {
+            Camera.main.cullingMask = defaulCullingMask;
+        }
         _congratulationUI.SetActive(set);
     }
     public void SetActiveShop(bool set)
