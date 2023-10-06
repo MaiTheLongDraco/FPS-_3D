@@ -8,6 +8,8 @@ public class GunSoundInfo : MonoBehaviour
     [SerializeField] private AudioClip fire;
     [SerializeField] private AudioClip ready;
     [SerializeField] private AudioClip reload;
+    [SerializeField] private AudioClip hitOther;
+
 
     private void Start()
     {
@@ -24,5 +26,9 @@ public class GunSoundInfo : MonoBehaviour
     public void PlayReload()
     {
         soundManager.PlaySound(reload);
+    }
+    public void PlayHitOther()
+    {
+        soundManager.PlaySound(hitOther);
     }
 }

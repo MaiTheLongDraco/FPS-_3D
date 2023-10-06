@@ -26,6 +26,7 @@ public class E_RunState : IEnemyState
 
     public void ExitState(Enemy _ctx)
     {
+        _ctx.PlaySound();
         _ctx.Animator.SetBool("isRunning", false);
         Debug.Log("exit run state");
 

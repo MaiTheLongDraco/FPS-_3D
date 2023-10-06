@@ -44,11 +44,20 @@ public class Enemy : MonoBehaviour
     public Vector3 FinalStandPos { get { return finalStandPos; } set { finalStandPos = value; } }
     public UnityEvent OnDeath;
     [SerializeField] private float agentSpeed;
+    [SerializeField] private GamePlayScene gamePlayScene;
+    private int playSoundCount;
+
+    #endregion
+    #region AudioClip
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioClip shootSound;
+
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
+        gamePlayScene = FindObjectOfType<GamePlayScene>();
         e_NavMesh = GetComponent<NavMeshAgent>();
         e_NavMesh.speed = agentSpeed;
         IsPlayerInRange = false;
@@ -57,6 +66,17 @@ public class Enemy : MonoBehaviour
     public Enemy()
     {
         _state = new E_RunState();
+    }
+    public void PlaySound()
+    {
+        if (playSoundCount > 1)
+            return;
+        playSoundCount++;
+        gamePlayScene.PlaySound(clip);
+    }
+    public void PlayShootSound()
+    {
+        gamePlayScene.PlaySound(shootSound);
     }
     // Update is called once per frame
     void Update()

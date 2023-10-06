@@ -6,6 +6,9 @@ public class AnimationControl : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private GunSoundInfo gunSoundInfo;
+
+    public GunSoundInfo GunSoundInfo { get => gunSoundInfo; set => gunSoundInfo = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,6 @@ public class AnimationControl : MonoBehaviour
         gunSoundInfo.PlayReady();
         SetTriggerAnim("Ready");
     }
-
     // Update is called once per frame
     void Update()
     {

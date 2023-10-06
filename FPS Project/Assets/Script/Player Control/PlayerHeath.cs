@@ -19,18 +19,24 @@ public class PlayerHeath : MonoBehaviour
     [SerializeField] private Image heathBar;
     [SerializeField] private UnityEvent onPlayDie;
     [SerializeField] private float _timeToDisActive;
+    [SerializeField] private GamePlayScene gamePlayScene;
+    [SerializeField] private AudioClip painSound;
+
+
     private Color originalColor;
     private Color targetColor;
     private float elapsedTime;
     #endregion
     private void Start()
     {
+        gamePlayScene = FindObjectOfType<GamePlayScene>();
         originalColor = _splashScreen.GetComponent<RawImage>().color;
         targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
     }
     public void TakeDamage(int damage)
     {
         _heath -= damage;
+        gamePlayScene.PlaySound(painSound);
         SetFillAmountOfHeath();
         if (_heath <= 0)
         {

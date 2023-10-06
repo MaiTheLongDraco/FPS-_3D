@@ -43,6 +43,7 @@ public class EnemyGun : MonoBehaviour
         {
             Debug.LogAssertion(E_shootInterval + "E_shootInterval");
             Shoot();
+            EnemyParent.PlayShootSound();
             E_shootInterval = max_shootInterval;
         }
     }

@@ -50,6 +50,7 @@ public class AmmoSystem : MonoBehaviour
         if (NumAmmoPerShoot <= 0)
         {
             gun.IsOutOfAmmo = true;
+            animationControl.GunSoundInfo.PlayReload();
             animationControl.SetTriggerAnim("Reload");
             Invoke("WaitReloadAmmo", timeToReload);
         }

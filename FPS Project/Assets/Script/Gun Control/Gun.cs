@@ -77,6 +77,7 @@ public class Gun : MonoBehaviour
                 }
             }
         }
+
     }
     private IEnumerator SetDamage(Enemy enemy)
     {
