@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!74 &7400000
 AnimationClip:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CameraReloadMP5
+  serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -67,7 +67,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.71666664
-        value: -5.7951547E-06
+        value: -0.0000057951547
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -132,7 +132,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: script_2398679499
-    path:
+    path: 
     classID: 114
     script: {fileID: 11500000, guid: ff762bd1b15420f8e5002248479b78ff, type: 3}
   - curve:
@@ -232,7 +232,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: script_4194287965
-    path:
+    path: 
     classID: 114
     script: {fileID: 11500000, guid: ff762bd1b15420f8e5002248479b78ff, type: 3}
   - curve:
@@ -260,7 +260,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: script_1626771687
-    path:
+    path: 
     classID: 114
     script: {fileID: 11500000, guid: ff762bd1b15420f8e5002248479b78ff, type: 3}
   m_PPtrCurves: []
@@ -273,21 +273,21 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 2398679499
+      attribute: 1353833220
       script: {fileID: 11500000, guid: ff762bd1b15420f8e5002248479b78ff, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 4194287965
+      attribute: 3406924018
       script: {fileID: 11500000, guid: ff762bd1b15420f8e5002248479b78ff, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 1626771687
+      attribute: 260796705
       script: {fileID: 11500000, guid: ff762bd1b15420f8e5002248479b78ff, type: 3}
       typeID: 114
       customType: 0
@@ -298,7 +298,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.7333333
+    m_StopTime: 1.7333332
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
