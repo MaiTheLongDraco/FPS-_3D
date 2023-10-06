@@ -21,8 +21,6 @@ public class EnemyGun : MonoBehaviour
         var isHitPlayer = Physics.Raycast(transform.position, dir, out hit, _shootRange);
         if (isHitPlayer)
         {
-
-
             var player = hit.transform.GetComponent<PlayerHeath>();
             if (player)
             {

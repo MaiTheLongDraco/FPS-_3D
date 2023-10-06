@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
     #region AudioClip
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioClip shootSound;
+    [SerializeField] public Transform testRoaming;
 
     #endregion
 
