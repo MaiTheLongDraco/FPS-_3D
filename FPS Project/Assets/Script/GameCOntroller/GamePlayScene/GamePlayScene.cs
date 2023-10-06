@@ -18,6 +18,7 @@ public class GamePlayScene : SSController
 
     private new void Start()
     {
+
         GetCoinData();
         levelData = FindObjectOfType<LevelData>();
         SetLevelTxt(levelData.GetSelectedLevel().ToString());
@@ -32,6 +33,10 @@ public class GamePlayScene : SSController
         GetCoinData();
         levelData = FindObjectOfType<LevelData>();
         SetLevelTxt(levelData.GetSelectedLevel().ToString());
+    }
+    public void PlaySound(AudioClip audioClip)
+    {
+        soundManager.PlaySound(audioClip);
     }
     public void LoadHomeScene()
     {

@@ -14,16 +14,21 @@ public class LevelScene : SSController
     [SerializeField] private Sprite currentBg;
     [SerializeField] private Sprite unlockIcon;
     [SerializeField] private LevelData levelData;
-
+    [SerializeField] private SoundManager soundManager;
     [SerializeField] private Text cointAmount;
     private new void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         levelData = FindObjectOfType<LevelData>();
         LoadCoinFromData();
         listBtn = GetComponentsInChildren<LevelButton>().ToList();
         levelData.SetListBtn(listBtn);
         ReadLevelJsonData();
         ReSetUpButton();
+    }
+    public void PlaySound(AudioClip audioClip)
+    {
+        soundManager.PlaySound(audioClip);
     }
     private new void Awake()
     {
