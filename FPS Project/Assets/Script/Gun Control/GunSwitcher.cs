@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
-
+/// <summary>
+/// 
+/// </summary>
 public class GunSwitcher : MonoBehaviour
 {
     [SerializeField] private List<Weapon> guns;

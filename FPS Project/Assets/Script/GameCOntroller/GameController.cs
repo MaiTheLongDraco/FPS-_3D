@@ -9,10 +9,22 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject Shop;
     [SerializeField] private GameObject _adsUI;
     [SerializeField] private GameObject _congratulationUI;
+    [SerializeField] private LayerMask adsCullingMask;
+    [SerializeField] private LayerMask defaulCullingMask;
+
+
 
     [SerializeField] private RewardedAdsButton rewardedAdsButton;
     public void ShowAdsUI(bool set)
     {
+        if (set)
+        {
+            Camera.main.cullingMask = adsCullingMask;
+        }
+        else
+        {
+            Camera.main.cullingMask = defaulCullingMask;
+        }
         _adsUI.SetActive(set);
     }
     public void RePlay()

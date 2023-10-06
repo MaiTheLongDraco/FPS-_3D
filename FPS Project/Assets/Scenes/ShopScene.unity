@@ -1982,6 +1982,12 @@ MonoBehaviour:
   Shop: {fileID: 0}
   _adsUI: {fileID: 802327901}
   _congratulationUI: {fileID: 1740135233}
+  adsCullingMask:
+    serializedVersion: 2
+    m_Bits: 33
+  defaulCullingMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
   rewardedAdsButton: {fileID: 1870313167}
 --- !u!1 &906267069
 GameObject:
