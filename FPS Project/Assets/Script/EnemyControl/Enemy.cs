@@ -51,8 +51,7 @@ public class Enemy : MonoBehaviour
     #region AudioClip
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioClip shootSound;
-    [SerializeField] public Transform testRoaming;
-
+    [SerializeField] private AudioClip dieSound;
     #endregion
 
     // Start is called before the first frame update
@@ -78,6 +77,10 @@ public class Enemy : MonoBehaviour
     public void PlayShootSound()
     {
         gamePlayScene.PlaySound(shootSound);
+    }
+    public void PlayDieSound()
+    {
+        gamePlayScene.PlaySound(dieSound);
     }
     // Update is called once per frame
     void Update()
@@ -108,6 +111,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("explosion");
             SetState(_deadState);
+            PlayDieSound();
             var explode = Instantiate(_explosionPrefab, transform.position, transform.rotation);
             OnDeath?.Invoke();
             Destroy(explode, 2f);

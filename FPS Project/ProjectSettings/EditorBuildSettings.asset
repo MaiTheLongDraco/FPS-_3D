@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/SSSystem/Scenes/SSEmpty.unity
+    guid: ef0246d6486ba4a62a69aec8c91a2af1
+  - enabled: 1
     path: Assets/Scenes/BaseScene.unity
     guid: 70c7f8fb59bc6cf4781eae0790de2cc6
   - enabled: 1
@@ -18,20 +21,20 @@ EditorBuildSettings:
     path: Assets/Scenes/ShopScene.unity
     guid: 4eb2f3613168f0b4b83eab491367a6cc
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/SSSystem/Scenes/SSEmpty.unity
-    guid: ef0246d6486ba4a62a69aec8c91a2af1
+    path: Assets/Scenes/LevelScene.unity
+    guid: aaf5b39fd4318c44992b2b7f0e8c6018
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 6136ac809ae65a14385e4ad89be3c4c3
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: 544e1eaf4bbe030409739ad39c2645a2
+    guid: 8ad5260ce06ff8f41ab095c44ef231b9
   - enabled: 1
-    path: Assets/Scenes/LevelScene.unity
-    guid: aaf5b39fd4318c44992b2b7f0e8c6018
+    path: Assets/Scenes/Level3.unity
+    guid: cca3f0d44ac4e504c821d8aefdec5601
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: ed61667a15a42b44cae0ec4827e69fd1
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: c21de40842339a3409ae8aac7bdba4bb
