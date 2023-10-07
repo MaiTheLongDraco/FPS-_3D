@@ -79,9 +79,10 @@ public class E_RunState : IEnemyState
             _ctx.NavMesh.SetDestination(_roamingPos);
             if (Vector3.Distance(enemyPos, _roamingPos) < 30f)
             {
+                Debug.Log("do roaming");
                 roamTimer = 0;
-                _isRoaming = false;
                 _ctx.Animator.SetBool("isRunning", false);
+                _isRoaming = false;
             }
 
         }
@@ -90,26 +91,42 @@ public class E_RunState : IEnemyState
             roamTimer += Time.deltaTime;
             if (roamTimer >= roamDelay)
             {
-                _isRoaming = true;
                 _ctx.Animator.SetBool("isRunning", true);
+                _isRoaming = true;
                 _roamingPos = GetRoamingPos(enemyPos);
                 Vector3 direction = _roamingPos - enemyPos;
-                Debug.DrawLine(enemyPos, direction);
-                NavMeshHit hit;
-                bool isOnNavMesh = NavMesh.SamplePosition(_roamingPos, out hit, 0.1f, NavMesh.AllAreas);
                 _ctx.transform.LookAt(direction.normalized);
-                if (!isOnNavMesh || Physics.Raycast(enemyPos, _roamingPos, direction.magnitude))
+                Debug.DrawLine(enemyPos, direction);
+                var check = IsRoamingPosValid(_roamingPos, enemyPos);
+                if (!check)
                 {
-                    var objectCollide = Physics.OverlapSphere(_roamingPos, 5f);
-                    if (objectCollide.Length == 0)
-                    {
-                        _roamingPos = GetRoamingPos(enemyPos);
-                        Debug.Log($"roaming pos inside building");
-                        _ctx.testRoaming.position = _roamingPos;
-                    }
-
+                    _roamingPos = GetRoamingPos(enemyPos);
                 }
                 Debug.Log("Come to next roam");
+            }
+        }
+    }
+    private bool IsRoamingPosValid(Vector3 roamingPos, Vector3 enemyPos)
+    {
+        NavMeshHit hit;
+        var dir = roamingPos - enemyPos;
+        bool isOnNavMesh = NavMesh.SamplePosition(_roamingPos, out hit, 0.1f, NavMesh.AllAreas);
+        if (!isOnNavMesh)
+        {
+            return false;
+        }
+        else
+        {
+            var hitBulding = Physics.Raycast(enemyPos, dir, dir.magnitude, LayerMask.NameToLayer("Building"));
+            if (hitBulding)
+            {
+                Debug.Log($"hit building -----");
+                return false;
+            }
+            else
+            {
+                Debug.Log($"not hit building-----");
+                return true;
             }
         }
     }
