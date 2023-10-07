@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -45,6 +44,8 @@ public class Enemy : MonoBehaviour
     public UnityEvent OnDeath;
     [SerializeField] private float agentSpeed;
     [SerializeField] private GamePlayScene gamePlayScene;
+    [SerializeField] private Image heathBar;
+
     private int playSoundCount;
 
     #endregion
@@ -107,6 +108,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         heath -= damage;
+        SetHeathFill(heath);
+
         if (heath <= 0)
         {
             Debug.Log("explosion");
@@ -116,6 +119,11 @@ public class Enemy : MonoBehaviour
             OnDeath?.Invoke();
             Destroy(explode, 2f);
         }
+    }
+    private void SetHeathFill(float heath)
+    {
+        var fillAmount = heath / 100;
+        heathBar.fillAmount = fillAmount;
     }
     public void SetIsPlayerOnRange(bool value)
     {

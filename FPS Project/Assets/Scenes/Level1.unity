@@ -7553,6 +7553,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 111784367}
     m_Modifications:
+    - target: {fileID: 430489048, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 7861452771121717982, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: _player
       value: 
@@ -7560,26 +7564,6 @@ PrefabInstance:
     - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: m_Name
       value: Soldier_demo (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7861452771533295017, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f4a7ff4bb03e4e84aa30e5fbe994796a, type: 3}
-    - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
-      propertyPath: dieSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 95fe2f3d51a6f5d4cb441592c8f3ad56, type: 3}
-    - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: b0985385788f9d74d8f3dacb90b03cb7, type: 3}
-    - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
-      propertyPath: testRoaming
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: _playerTranform
@@ -11824,7 +11808,7 @@ PrefabInstance:
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: dieSound
       value: 
-      objectReference: {fileID: 8300000, guid: d1a3181c8438a6c4b996f1f156e49d79, type: 3}
+      objectReference: {fileID: 8300000, guid: 95fe2f3d51a6f5d4cb441592c8f3ad56, type: 3}
     - target: {fileID: 7861452771533295018, guid: c6cf117953ddbe44bb05acb79ead45f8, type: 3}
       propertyPath: shootSound
       value: 
