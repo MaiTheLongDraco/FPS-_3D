@@ -84,6 +84,15 @@ public class GunSwitcher : MonoBehaviour
     }
     private void ReadJsonToData()
     {
+        foreach (var gun in guns)
+        {
+            if (gun.gunName == "Default")
+            {
+                if (usingGun.Contains(gun.gun))
+                    break;
+                usingGun.Add(gun.gun);
+            }
+        }
         var filePath = Application.persistentDataPath + $"/gunData.json";
         if (!File.Exists(filePath)) return;
         string jsonData = File.ReadAllText(Application.persistentDataPath + $"/gunData.json");
@@ -94,15 +103,7 @@ public class GunSwitcher : MonoBehaviour
             var boughtGun = guns.Find(item => item.gunName == gunKey);
             usingGun.Add(boughtGun.gun);
         }
-        foreach (var gun in guns)
-        {
-            if (gun.gunName == "Default")
-            {
-                if (usingGun.Contains(gun.gun))
-                    break;
-                usingGun.Add(gun.gun);
-            }
-        }
+
     }
 
     public void SetAimCurrentGun(bool set)

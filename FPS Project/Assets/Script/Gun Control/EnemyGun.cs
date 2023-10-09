@@ -25,7 +25,7 @@ public class EnemyGun : MonoBehaviour
             if (player)
             {
                 player.TakeDamage(_damage);
-                StartCoroutine(player.SplashScreenHandle());
+
             }
         }
     }

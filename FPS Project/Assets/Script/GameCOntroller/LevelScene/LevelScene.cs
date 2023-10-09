@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class LevelScene : SSController
 {
     public static LevelScene Instance;
@@ -16,6 +15,7 @@ public class LevelScene : SSController
     [SerializeField] private LevelData levelData;
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private Text cointAmount;
+    [SerializeField] private int[] defaultLevel = { 1 };
     private new void Start()
     {
         soundManager = FindObjectOfType<SoundManager>();
@@ -45,21 +45,50 @@ public class LevelScene : SSController
     }
     private void ReadLevelJsonData()
     {
-        string jsonData = File.ReadAllText(Application.persistentDataPath + $"/levelData.json");
-        if (jsonData == null) return;
-        LevelJsonData levelJsonData = JsonUtility.FromJson<LevelJsonData>(jsonData);
-        foreach (var key in levelJsonData.levelUnlockKey)
+        string jsonPath = Application.persistentDataPath + $"/levelData.json";
+        if (File.Exists(jsonPath))
         {
-            var activeBtn = listBtn.Find(btn => btn.GetKey() == key);
-            activeBtn.buttonState = ButtonState.UNLOCKED;
-        }
-        foreach (var button in listBtn)
-        {
-            if (button.GetKey() == levelJsonData.currentLevel)
+            print("file have exist");
+            var jsonData = File.ReadAllText(Application.persistentDataPath + $"/levelData.json");
+            LevelJsonData levelJsonData = JsonUtility.FromJson<LevelJsonData>(jsonData);
+            foreach (var key in levelJsonData.levelUnlockKey)
             {
-                button.buttonState = ButtonState.CURRENT;
-
+                var activeBtn = listBtn.Find(btn => btn.GetKey() == key);
+                activeBtn.buttonState = ButtonState.UNLOCKED;
             }
+            foreach (var button in listBtn)
+            {
+                if (button.GetKey() == levelJsonData.currentLevel)
+                {
+                    button.buttonState = ButtonState.CURRENT;
+
+                }
+            }
+        }
+        else
+        {
+            print("!file have exist");
+            LevelJsonData defaultData = new LevelJsonData(defaultLevel.ToList(), 1); // Tạo đối tượng dữ liệu mặc định
+            // Serialize đối tượng thành chuỗi JSON
+            var json = JsonUtility.ToJson(defaultData);
+            File.WriteAllText(Application.persistentDataPath + $"/levelData.json", json);
+            // string jsonData = File.ReadAllText(Application.persistentDataPath + $"/levelData.json");
+            // var jsonData = File.ReadAllText(Application.persistentDataPath + $"/levelData.json");
+            // LevelJsonData levelJsonData = JsonUtility.FromJson<LevelJsonData>(jsonData);
+            // foreach (var key in levelJsonData.levelUnlockKey)
+            // {
+            //     var activeBtn = listBtn.Find(btn => btn.GetKey() == key);
+            //     activeBtn.buttonState = ButtonState.UNLOCKED;
+            // }
+            // foreach (var button in listBtn)
+            // {
+            //     if (button.GetKey() == levelJsonData.currentLevel)
+            //     {
+            //         button.buttonState = ButtonState.CURRENT;
+
+            //     }
+            // }
+
         }
     }
     public void LoadHomeScene()

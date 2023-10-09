@@ -63,12 +63,14 @@ public class SetTextForEnemy : MonoBehaviour
 
     private void SetLevelData()
     {
+        print($"Level data null +++++ {levelData == null}");
         levelData.SetButtonStateWithKey(gamePlayScene
                     .GetLevelDataKey(), ButtonState.UNLOCKED);
         levelData.AddKeyToActiveBtn(levelData.selectedLevel);
         LevelJsonData levelJsonData = new LevelJsonData(levelData.GetLevelKey(), levelData.selectedLevel + 1);
         var json = JsonUtility.ToJson(levelJsonData);
         File.WriteAllText(Application.persistentDataPath + $"/levelData.json", json);
+        print($"Is file nulll {File.Exists(Application.persistentDataPath + $"/levelData.json")}");
     }
 
     private void WinGame()
@@ -81,9 +83,11 @@ public class SetTextForEnemy : MonoBehaviour
         {
             var currentCoin = PlayerPrefs.GetInt("cointAmount");
             currentCoin += rewardCoin;
+            print($"currrent coint +++++{currentCoin}");
             PlayerPrefs.SetInt("cointAmount", currentCoin);
             PlayerPrefs.Save();
         }
+        print($"Level data null +++++ {levelData == null}");
         SetActiveWinPanel(true);
         rewarCoinTxt.text = rewardCoin.ToString();
     }

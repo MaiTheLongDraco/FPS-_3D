@@ -36,6 +36,7 @@ public class PlayerHeath : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _heath -= damage;
+        StartCoroutine(SplashScreenHandle());
         gamePlayScene.PlaySound(painSound);
         SetFillAmountOfHeath();
         if (_heath <= 0)
@@ -53,7 +54,6 @@ public class PlayerHeath : MonoBehaviour
     }
     private void HandleIfDead()
     {
-
         Debug.Log("Player died");
     }
     private void CheckIfDead()

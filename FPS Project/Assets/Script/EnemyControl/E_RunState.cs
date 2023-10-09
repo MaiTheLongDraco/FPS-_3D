@@ -77,22 +77,22 @@ public class E_RunState : IEnemyState
         if (_isRoaming)
         {
             _ctx.NavMesh.SetDestination(_roamingPos);
-            if (Vector3.Distance(enemyPos, _roamingPos) < 30f)
+            if (Vector3.Distance(enemyPos, _roamingPos) < 5f)
             {
-                Debug.Log("do roaming");
-                roamTimer = 0;
                 _ctx.Animator.SetBool("isRunning", false);
+                Debug.Log($"do roaming {_isRoaming}");
+                roamTimer = 0;
                 _isRoaming = false;
             }
-
         }
         else
         {
             roamTimer += Time.deltaTime;
             if (roamTimer >= roamDelay)
             {
+                Debug.Log($"!do roaming {_isRoaming}");
+
                 _ctx.Animator.SetBool("isRunning", true);
-                _isRoaming = true;
                 _roamingPos = GetRoamingPos(enemyPos);
                 Vector3 direction = _roamingPos - enemyPos;
                 _ctx.transform.LookAt(direction.normalized);
@@ -100,9 +100,21 @@ public class E_RunState : IEnemyState
                 var check = IsRoamingPosValid(_roamingPos, enemyPos);
                 if (!check)
                 {
+                    NavMeshHit hit;
                     _roamingPos = GetRoamingPos(enemyPos);
+                    if (NavMesh.SamplePosition(_roamingPos, out hit, 0.1f, NavMesh.AllAreas))
+                    {
+                        _roamingPos = hit.position;
+                    }
+                    else
+                    {
+                        _roamingPos = _ctx.transform.position;
+                    }
+
                 }
                 Debug.Log("Come to next roam");
+                _isRoaming = true;
+
             }
         }
     }
@@ -113,6 +125,7 @@ public class E_RunState : IEnemyState
         bool isOnNavMesh = NavMesh.SamplePosition(_roamingPos, out hit, 0.1f, NavMesh.AllAreas);
         if (!isOnNavMesh)
         {
+            Debug.Log($"not on navmesh -----");
             return false;
         }
         else

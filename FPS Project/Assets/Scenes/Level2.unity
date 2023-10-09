@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 1
+    agentRadius: 1.75
     agentHeight: 5
     agentSlope: 45.8
     agentClimb: 1.5
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 1
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.33333334
+    cellSize: 0.5833333
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 573b612651f48be429be694e80628227, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 2a79285b5183d634585f8bb80cd17035, type: 2}
 --- !u!1 &242838
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,7 +6808,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 2175
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -9512,6 +9512,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1049783616789296, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1054402822641717, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -10243,6 +10247,10 @@ PrefabInstance:
     - target: {fileID: 1388923311304082, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
       propertyPath: m_Name
       value: Map_v3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389928268407514, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1391470164461878, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
       propertyPath: m_Layer
@@ -11272,6 +11280,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1781237713856808, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1782163825736921, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -11656,6 +11668,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1959779790544735, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1961003920170071, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -11777,6 +11793,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1994227937797009, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996883691322741, guid: 441d6dfcbe2239c469ab9fd1a83cb227, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -16405,7 +16425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3315517735229805514, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3318707540778135462, guid: 1957b6844a8ec2b44a0cd17d712e1e37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
